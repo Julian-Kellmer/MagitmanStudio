@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+@import './fontsImport.css';
+
+/* Base */
+@import '../styles/base/reset.css';
+
+/* Theme tokens */
+@import '../styles/theme/tokens.css';
+@import '../styles/theme/colors.css';
+
+/* Utilities */
+@import '../styles/utilities/typography.css';
+@import '../styles/utilities/grid.css';
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-fast {
+  animation: marquee 10s linear infinite;
+}
+.animate-marquee-slow {
+  animation: marquee 500s linear infinite;
+}
+
+.fade-mask-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+@keyframes waveUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.8s linear forwards;
+}
