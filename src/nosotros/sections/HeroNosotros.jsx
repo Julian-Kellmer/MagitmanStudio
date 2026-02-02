@@ -25,7 +25,7 @@ const HeroNosotros = () => {
             Nuestro Equipo
           </h1>
           <div className='md:col-span-6 col-span-full'>
-            <p className='text-body text-black/70 max-w-2xl'>
+            <p className='text-body text-primary max-w-2xl'>
               Trabajamos de manera personalizada. Analizamos, asesoramos y
               buscamos mejoras reales y ahorros impositivos que acompañen el
               crecimiento de cada negocio.

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import BrandsMarquee from '../../components/BrandsMarqee'
+import WaveText from '../../components/TextWave'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -140,7 +141,7 @@ const TrustUs = () => {
       ref={containerRef}
       className='layout-wrap md:mt-64 mt-24 flex flex-col gap-12'>
       <div className='layout-grid col-span-full md:mb-32 '>
-        <div className='md:col-span-6 md:col-start-2 col-span-full flex flex-col gap-4 animate-text'>
+        <div className='p-4 md:col-span-6 md:col-start-2 col-span-full flex flex-col gap-4 animate-text'>
           <div className='flex items-center gap-2 '>
             <div className='h-2 w-2 bg-[#eb1c24] rounded-full '> </div>
             <p className='text-h6 opacity-50'> Confian en nosotros </p>
@@ -161,15 +162,12 @@ const TrustUs = () => {
         direction={'right'}
       />
 
-      <div className='layout-grid col-span-full md:mt-64 mt-24'>
+      <div className='layout-grid col-span-full md:mt-64 mt-24 h-screen flex items-center'>
         <div className='col-span-full flex justify-center w-full gap-4 animate-text'>
-          <h3 className='text-h3 text-center md:w-2/5'>
-            Actuamos con{' '}
-            <span className='border-b-2 border-[#eb1c24]'>
-              compromiso, responsabilidad y lealtad
-            </span>
-            , es por ello que nuestros clientes nos siguen eligiendo
-          </h3>
+          <WaveText
+            text='Actuamos con compromiso, responsabilidad y lealtad, es por ello que nuestros clientes nos siguen eligiendo'
+            className='text-h3 text-center md:w-3/5 mx-auto'
+          />
         </div>
       </div>
     </section>

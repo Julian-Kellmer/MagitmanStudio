@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
 
 const ArrowIcon = () => (
@@ -18,24 +20,27 @@ const ArrowIcon = () => (
 )
 
 const Team = () => {
+  const [showMoreKarina, setShowMoreKarina] = useState(false)
   return (
     <section
-      className='layout-wrap md:mt-32 md:mb-32 mt-12 mb-12'
+      className='layout-wrap md:mt-32 md:mb-32 mt-0 mb-12'
       id='team'>
-      <div className='layout-grid col-span-full mb-24'>
+      <div className='layout-grid col-span-full md:mb-24 mb-12'>
         <div className='md:col-span-5 col-span-full md:col-start-7 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
           <h2 className='text-h2 leading-none font-medium'>
             Equipo Estudio Magitman <br /> & ASOC
           </h2>
-          <Button className='flex items-center gap-2 text-[#eb1c24] hover:opacity-80 !p-0 font-medium border-b border-[#eb1c24] rounded-none pb-1 w-fit mt-4'>
-            Conoce mas <ArrowIcon />
-          </Button>
+          <Link to='/nosotros'>
+            <Button className='flex items-center gap-2 text-[#eb1c24] hover:opacity-80 !p-0 font-medium border-b border-[#eb1c24] rounded-none pb-1 w-fit mt-4'>
+              Conoce mas <ArrowIcon />
+            </Button>
+          </Link>
         </div>
       </div>
 
       <div className='layout-grid col-span-full items-start'>
         {/* Image - Col 2 to 5 (Span 4) */}
-        <div className='md:col-span-4 col-span-full md:col-start-2 relative aspect-[4/5] overflow-hidden '>
+        <div className='md:col-span-4 p-4 col-span-full md:col-start-2 relative aspect-[4/5] overflow-hidden '>
           <img
             src='/KarinaImg.png'
             alt='Karina Maguitman'
@@ -88,11 +93,50 @@ const Team = () => {
               Es asesora tributaria del Gobierno de la Ciudad Autónoma de Buenos
               Aires desde el año 2008, desempeñándose en distintas reparticiones
               del mismo. Asesora de empresas privadas nacionales y extranjeras
-              así como de empresas pertenecientes al Estado...{' '}
-              <span className='text-black font-medium text-xs cursor-pointer border-b border-black'>
-                VER MAS
-              </span>
+              así como de empresas pertenecientes al Estado.{' '}
+              {!showMoreKarina && (
+                <span
+                  onClick={() => setShowMoreKarina(true)}
+                  className='text-black font-medium text-xs cursor-pointer border-b border-black hover:opacity-70 transition-opacity'>
+                  VER MAS
+                </span>
+              )}
             </p>
+
+            {showMoreKarina && (
+              <>
+                <p>
+                  Es profesora adjunta de las materias de Impuestos I e
+                  Impuestos II de la Universidad de Belgrano, en la carrera de
+                  Contador Público.
+                </p>
+                <p>
+                  Fue columnista del Diario "El Cronista" dentro de su
+                  Suplemento Impositivo y Previsional, a cargo de la columna
+                  mensual "Compilado de Dictámenes y Consultas" emitidos por la
+                  Administración Federal de Ingresos Públicos, ahora ARCA.
+                </p>
+                <p>
+                  Ha publicado trabajos relativos a la materia tributaria en
+                  distintos medios periodísticos y presentado trabajos escritos
+                  en diversos Congresos Nacionales.
+                </p>
+                <p>
+                  Miembro de la Comisión de Estudios Impositivos del Colegio de
+                  Graduados en Ciencias Económicas de la Ciudad Autónoma de
+                  Buenos Aires desde el año 2002.
+                </p>
+                <p>
+                  Se ha desempeñado como docente en Teoría y Técnica Impositiva
+                  II de la Universidad de Buenos Aires.
+                </p>
+                <span
+                  onClick={() => setShowMoreKarina(false)}
+                  className='text-black font-medium text-xs cursor-pointer border-b border-black hover:opacity-70 transition-opacity w-fit'>
+                  VER MENOS
+                </span>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -157,7 +201,7 @@ const Team = () => {
         </div>
 
         {/* Image - Col 8 to 11 (Span 4) */}
-        <div className='md:col-span-4 col-span-full md:col-start-8 relative aspect-[4/5] overflow-hidden '>
+        <div className='p-4 md:col-span-4 col-span-full md:col-start-8 relative aspect-[4/5] overflow-hidden '>
           <img
             src='/GustavoImg.png'
             alt='Gustavo Warcevitzky'

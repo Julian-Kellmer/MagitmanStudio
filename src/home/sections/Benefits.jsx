@@ -61,7 +61,7 @@ const Benefits = () => {
         className='layout-grid animate-item'>
         <div className=' bg-red-500 col-span-5 col-start-7  '>
           <img
-            src='About2.png'
+            src='estudio6.jpg'
             className='w-full h-full object-cover'
             alt=''
           />
@@ -85,7 +85,7 @@ const Benefits = () => {
         className='layout-grid animate-item md:mt-24'>
         <div className=' bg-red-500 md:col-span-5 md:col-start-2 col-span-3'>
           <img
-            src='About1.png'
+            src='estudio4.jpg'
             className='w-full h-full object-cover'
             alt=''
           />

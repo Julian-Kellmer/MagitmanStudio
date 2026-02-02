@@ -4,8 +4,8 @@ import WaveText from '../../components/TextWave'
 
 const Hero = () => {
   return (
-    <section className='layout-wrap '>
-      <div className='layout-grid md:mt-[128px]'>
+    <section className='layout-wrap min-h-screen'>
+      <div className='layout-grid mt-12 md:mt-[128px] '>
         {/* Text Section */}
         <div className=' col-span-full md:col-span-6 mb-16 text-center sm:text-left md:h-[25svh] h-[30svh] flex  items-end'>
           <WaveText

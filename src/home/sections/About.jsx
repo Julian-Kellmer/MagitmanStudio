@@ -213,12 +213,12 @@ const About = () => {
   return (
     <section
       ref={containerRef}
-      className='layout-wrap md:mt-64 mt-24 py-32 min-h-screen'>
+      className='layout-wrap md:mt-64 mt-24 md:py-32 py-12 min-h-screen'>
       <div className='layout-grid col-span-full items-start'>
         {/* Left Column */}
         <div className='col-span-full layout-grid'>
-          <div className='md:col-span-5 col-span-full md:col-start-2 flex flex-col justify-start   h-full gap-12'>
-            <div className='flex flex-col gap-6 max-w-[90%] animate-header'>
+          <div className='md:col-span-5 col-span-full md:col-start-2 flex flex-col justify-start h-full md:gap-12'>
+            <div className='p-4 flex flex-col gap-6 max-w-[90%] animate-header'>
               <h2 className='text-h2 '>
                 Beneficios de trabajar con Estudio Magitman
               </h2>
@@ -244,7 +244,7 @@ const About = () => {
         </div>
 
         {/* Right Column - Cards Grid */}
-        <div className='md:col-span-6 md:col-end-[-1] col-span-full grid grid-cols-2 gap-x-12 gap-y-16 mt-16 md:mt-0 md:px-0 px-8 cards-container'>
+        <div className='md:col-span-6 md:col-end-[-1] col-span-full grid md:grid-cols-2 grid-cols-1 gap-x-12 gap-y-16 md:mt-16 md:mt-0 md:px-0 px-8 cards-container'>
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}

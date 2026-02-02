@@ -171,7 +171,7 @@ const TeamList = () => {
       <div className='layout-grid col-span-full items-start'>
         {/* Intro Text */}
         <div className='md:col-span-12 col-span-full mb-16'>
-          <p className='text-h5 font-medium text-primary max-w-4xl'>
+          <p className='text-h5  text-primary max-w-4xl'>
             El valor de nuestro estudio reside en las personas que lo conforman.
             Nuestro equipo acompaña de manera cercana a cada cliente,
             entendiendo sus necesidades y desafíos. La dedicación de nuestros
