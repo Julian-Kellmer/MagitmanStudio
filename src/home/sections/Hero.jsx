@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
 
         {/* Full layout image */}
-        <div className='col-span-full h-[45svh]'>
+        <div className='col-span-full md:h-[80svh] h-[45svh]'>
           <img
             src='home.webp'
             alt='Architecture'
