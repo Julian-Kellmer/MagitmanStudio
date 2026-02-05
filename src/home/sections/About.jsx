@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../../components/Button'
@@ -119,132 +118,47 @@ const benefits = [
 
 const BenefitCard = ({ icon, title, description }) => {
   return (
-    <div className='flex flex-col items-start gap-4 min-h-[250px] max-w-[250px] animate-card'>
-      <div className='p-2 border border-black/10 rounded-full mb-2'>{icon}</div>
-      <h4 className='text-h6 font-medium leading-tight'>{title}</h4>
-      <div className='h-[0.5px] w-full bg-[#eb1c24] '></div>
-      <p className='text-sm text-black/60 leading-relaxed'>{description}</p>
+    <div className='flex flex-col justify-between items-start p-8 bg-white/50 rounded-2xl min-h-[350px] max-w-[550px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 w-full h-full gap-8 group'>
+      <div className='flex flex-col items-start gap-6'>
+        <div className='p-3 border border-black/5 rounded-2xl bg-gray-50 text-primary group-hover:scale-110 transition-transform duration-300'>
+          {icon}
+        </div>
+        <h4 className='text-h5 font-medium leading-tight text-start text-primary'>
+          {title}
+        </h4>
+      </div>
+      <p className='text-body text-black/60 leading-relaxed text-start'>
+        {description}
+      </p>
     </div>
   )
 }
 
 const About = () => {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia()
-
-      mm.add(
-        {
-          isMobile: '(max-width: 767px)',
-          isDesktop: '(min-width: 768px)',
-        },
-        (context) => {
-          const { isMobile } = context.conditions
-
-          // Animar título y descripción desde la izquierda
-          gsap.fromTo(
-            '.animate-header',
-            {
-              opacity: 0,
-              x: -50,
-            },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 1,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: '.animate-header',
-                start: isMobile ? 'top 90%' : 'top 80%',
-                toggleActions: 'play none none reverse',
-              },
-            },
-          )
-
-          // Animar botón desde abajo
-          gsap.fromTo(
-            '.animate-button',
-            {
-              opacity: 0,
-              y: 30,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: '.animate-button',
-                start: isMobile ? 'top 95%' : 'top 85%',
-                toggleActions: 'play none none reverse',
-              },
-            },
-          )
-
-          // Animar tarjetas de beneficios con stagger
-          gsap.fromTo(
-            '.animate-card',
-            {
-              opacity: 0,
-              y: 40,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              stagger: 0.15,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: '.cards-container',
-                start: isMobile ? 'top 90%' : 'top 75%',
-                toggleActions: 'play none none reverse',
-              },
-            },
-          )
-        },
-      )
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [])
-
+  
   return (
-    <section
-      ref={containerRef}
-      className='layout-wrap md:mt-64 mt-24 md:py-32 py-12 min-h-screen'>
-      <div className='layout-grid col-span-full items-start'>
+    <section className='layout-wrap  md:py-12 min-h-[100vh] md:mb-24 bg-darkground/10 py-8 md:px-0 px-4'>
+      <div className='layout-grid col-span-full items-start  '>
         {/* Left Column */}
-        <div className='col-span-full layout-grid'>
-          <div className='md:col-span-5 col-span-full md:col-start-2 flex flex-col justify-start h-full md:gap-12'>
-            <div className='p-4 flex flex-col gap-6 max-w-[90%] animate-header'>
+        <div className='col-span-full layout-grid px-4 mb-12'>
+          <div className='col-span-10 md:col-start-2 flex flex-col justify-start h-full md:gap-12'>
+            <div className=' flex flex-col gap-6 animate-header w-full '>
               <h2 className='text-h2 '>
-                Beneficios de trabajar con Estudio Magitman
+                Beneficios de trabajar con Estudio Maguitman
               </h2>
-              <p className='text-body text-black/70'>
-                Trabajamos de manera personalizada. Analizamos, asesoramos y
-                buscamos mejoras reales y ahorros impositivos que acompañen el
-                crecimiento de cada negocio.
-              </p>
-            </div>
-
-            <div className='self-end md:self-start mt-8 px-8 animate-button'>
-              <Button className='group flex items-center  gap-2 text-[#eb1c24] hover:opacity-80 !p-0 font-medium border-b border-[#eb1c24] rounded-none pb-1 w-fit overflow-hidden'>
-                Contactanos
-                <div className='relative h-[12px] w-[12px] overflow-hidden'>
-                  <div className='flex flex-col transition-transform duration-300 ease-in-out group-hover:-translate-y-[12px]'>
-                    <ArrowIcon />
-                    <ArrowIcon />
-                  </div>
-                </div>
-              </Button>
+              <div className='flex md:flex-row flex-col justify-between gap-8 md:items-end'>
+                <p className='text-h6 text-black/70 md:max-w-[50%]'>
+                  Trabajamos de manera personalizada. Analizamos, asesoramos y
+                  buscamos mejoras reales y ahorros impositivos que acompañen el
+                  crecimiento de cada negocio.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column - Cards Grid */}
-        <div className='md:col-span-6 md:col-end-[-1] col-span-full grid md:grid-cols-2 grid-cols-1 gap-x-12 gap-y-16 md:mt-16 md:mt-0 md:px-0 px-8 cards-container'>
+        
+        <div className='md:col-span-10 md:col-start-2 col-span-full grid md:grid-cols-2 grid-cols-1 md:gap-8 md:px-0 px-8 gap-y-8 cards-container'>
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}

@@ -23,12 +23,12 @@ const Team = () => {
   const [showMoreKarina, setShowMoreKarina] = useState(false)
   return (
     <section
-      className='layout-wrap md:mt-32 md:mb-32 mt-0 mb-12'
+      className='layout-wrap md:mb-32  mb-12 py-8 md:px-0 px-4 '
       id='team'>
       <div className='layout-grid col-span-full md:mb-24 mb-12'>
-        <div className='md:col-span-5 col-span-full md:col-start-7 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
+        <div className='md:col-span-10 col-span-full md:col-start-2 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
           <h2 className='text-h2 leading-none font-medium'>
-            Equipo Estudio Magitman <br /> & ASOC
+            Equipo Estudio Maguitman & ASOC
           </h2>
           <Link to='/nosotros'>
             <Button className='flex items-center gap-2 text-[#eb1c24] hover:opacity-80 !p-0 font-medium border-b border-[#eb1c24] rounded-none pb-1 w-fit mt-4'>
@@ -42,9 +42,9 @@ const Team = () => {
         {/* Image - Col 2 to 5 (Span 4) */}
         <div className='md:col-span-4 p-4 col-span-full md:col-start-2 relative aspect-[4/5] overflow-hidden '>
           <img
-            src='/KarinaImg.png'
+            src='/KarinaMaguitman.jpg'
             alt='Karina Maguitman'
-            className='object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500'
+            className='object-cover w-full h-full transition-all duration-500 rounded-lg'
           />
         </div>
 
@@ -78,7 +78,7 @@ const Team = () => {
               </div>
             </div>
             <p className='text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
-              LIDER DEL ESTUDIO MAGITMAN
+              LIDER DEL ESTUDIO Maguitman
             </p>
           </div>
 
@@ -171,7 +171,7 @@ const Team = () => {
               </div>
             </div>
             <p className='text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
-              LIDER DEL ESTUDIO MAGITMAN
+              LIDER DEL ESTUDIO Maguitman
             </p>
           </div>
 
@@ -203,9 +203,9 @@ const Team = () => {
         {/* Image - Col 8 to 11 (Span 4) */}
         <div className='p-4 md:col-span-4 col-span-full md:col-start-8 relative aspect-[4/5] overflow-hidden '>
           <img
-            src='/GustavoImg.png'
+            src='/GustavoWarcevitzky.jpg'
             alt='Gustavo Warcevitzky'
-            className='object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-500'
+            className='object-cover w-full h-full transition-all duration-500 rounded-lg'
           />
         </div>
       </div>

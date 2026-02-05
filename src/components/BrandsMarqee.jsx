@@ -10,17 +10,34 @@ const BrandsMarquee = ({ brands = [], direction = 'left' }) => {
         style={{
           animationDirection: direction === 'right' ? 'reverse' : 'normal',
         }}>
-        {loopedBrands.map((item, index) => (
-          <div
-            key={index}
-            className={`flex items-center justify-center mx-8 w-[200px] md:w-[300px] h-[100px] md:h-[150px] border-1 border-secondary/50 rounded-xl opacity-70 bg-white/50 `}>
-            <img
-              src={item.image || item}
-              alt={item.name || `Brand ${index}`}
-              className='max-w-full max-h-full object-contain grayscale'
-            />
-          </div>
-        ))}
+        {loopedBrands.map((item, index) => {
+          const content = (
+            <div
+              className={`flex items-center justify-center mx-8 w-[200px] md:w-[200px] h-[100px] md:h-[100px]`}>
+              <img
+                src={item.image || item}
+                alt={item.name || `Brand ${index}`}
+                className='max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300'
+              />
+            </div>
+          )
+
+          return (
+            <React.Fragment key={index}>
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block'>
+                  {content}
+                </a>
+              ) : (
+                content
+              )}
+            </React.Fragment>
+          )
+        })}
       </div>
     </div>
   )

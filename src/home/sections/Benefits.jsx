@@ -41,54 +41,58 @@ const Benefits = () => {
   return (
     <section
       ref={containerRef}
-      className=' layout-wrap md:mt-64 mt-24 flex flex-col justify-center gap-12'>
+      className=' layout-wrap pt-12 flex flex-col justify-center gap-12'>
       <div className='layout-grid col-span-full animate-item'>
         <div
           id='animation'
           className='md:col-span-5 md:col-start-2 col-span-full flex flex-col gap-4'>
           <div className='flex items-center gap-2 '>
             <div className='h-2 w-2 bg-[#eb1c24] rounded-full '> </div>
-            <p className='text-h6 opacity-50'> Acerca de nosotros </p>
+            <p className='text-h3 '> Acerca de nosotros </p>
           </div>
-          <h3 className='text-h3'>
+          <h3 className='text-h6 text-start max-w-[80%]'>
             Desde hace más de 30 años brindamos asesoramiento tributario;
-            societario y servicios de auditoría.
+            societario y servicios de auditoría. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Autem, impedit atque? Iste, earum
+            accusantium quidem, voluptatem, placeat similique eius recusandae
+            perferendis dolore obcaecati possimus? Voluptatum, eos eveniet. Cum,
+            animi debitis.
           </h3>
         </div>
-      </div>
-      <div
-        id='animation'
-        className='layout-grid animate-item'>
-        <div className=' bg-red-500 col-span-5 col-start-7  '>
+        <div
+          id='animation'
+          className='md:col-span-5 col-span-full animate-item'>
           <img
             src='estudio6.jpg'
-            className='w-full h-full object-cover'
+            className='w-full h-full object-cover rounded-lg'
             alt=''
           />
         </div>
       </div>
-      <div
-        id='animation'
-        className='layout-grid col-span-full md:mt-64 mt-24 animate-item'>
-        <div className='md:col-span-6 md:col-end-[-2] col-span-full flex flex-col '>
-          <div className='flex items-start gap-6  '>
-            <h3 className='text-h3 text-end'>
-              La capacitación, actualización permanente y solvencia profesional
-              son los pilares de nuestro trabajo.
-            </h3>
-            <div className='h-3 w-6 bg-[#eb1c24] rounded-full mt-2'> </div>
-          </div>
-        </div>
-      </div>
-      <div
-        id='animation'
-        className='layout-grid animate-item md:mt-24'>
-        <div className=' bg-red-500 md:col-span-5 md:col-start-2 col-span-3'>
+      <div className='layout-grid col-span-full animate-item'>
+        <div
+          id='animation'
+          className='md:col-span-5 md:col-start-2 col-span-full animate-item order-last md:order-none'>
           <img
             src='estudio4.jpg'
-            className='w-full h-full object-cover'
+            className='w-full h-full object-cover rounded-lg'
             alt=''
           />
+        </div>
+        <div
+          id='animation'
+          className='md:col-span-5 col-span-full flex flex-col justify-start gap-4 items-end text-end'>
+          <div className='flex  gap-2 '>
+            <h3 className='text-h3 text-start'>En nuestro estudio</h3>
+            <div className='h-2 w-2 bg-[#eb1c24] rounded-full self-center'>
+              {' '}
+            </div>
+          </div>
+          <p className='text-body   text-end max-w-[80%]'>
+            La capacitación, actualización permanente y solvencia profesional
+            son los pilares de nuestro trabajo.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate blanditiis odio. Natus velit unde illum! Odio laudantium excepturi optio corrupti porro sit dolor et aperiam? Voluptatem aperiam similique excepturi?
+          </p>
         </div>
       </div>
     </section>

@@ -5,6 +5,8 @@ export const WaveText = ({
   className = '',
   delay = 0,
   noWrap = false,
+  highlightWords = [],
+  highlightClass = '',
 }) => {
   const [isVisible, setIsVisible] = useState(false)
   const textRef = useRef(null)
@@ -54,9 +56,18 @@ export const WaveText = ({
         const currentWordStartUserIndex = wordStartIndices[wordIndex]
         const chars = word.split('')
 
+        // Clean punctuation for comparison
+        const cleanWord = word.replace(
+          new RegExp('[.,/#!$%^&*;:{}=\\-_`~()]', 'g'),
+          '',
+        )
+        const isHighlighted = highlightWords.includes(cleanWord)
+
         return (
           <React.Fragment key={wordIndex}>
-            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+            <span
+              className={isHighlighted ? highlightClass : ''}
+              style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
               {chars.map((char, charIndex) => (
                 <span
                   key={charIndex}

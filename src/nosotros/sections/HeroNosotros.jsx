@@ -17,20 +17,12 @@ const HeroNosotros = () => {
         <div className='md:col-span-12 col-span-full flex flex-col gap-6 md:mb-16'>
           <div className='flex items-center gap-2'>
             <div className='h-2 w-2 bg-[#eb1c24] rounded-full'></div>
-            <p className='text-sm uppercase tracking-wider text-black/60 font-medium'>
+            <p className='text-h2 text-primary font-medium leading-tight max-w-4xl'>
               Quienes somos
             </p>
           </div>
-          <h1 className='text-h2 text-primary font-medium leading-tight max-w-4xl'>
-            Nuestro Equipo
-          </h1>
-          <div className='md:col-span-6 col-span-full'>
-            <p className='text-body text-primary max-w-2xl'>
-              Trabajamos de manera personalizada. Analizamos, asesoramos y
-              buscamos mejoras reales y ahorros impositivos que acompañen el
-              crecimiento de cada negocio.
-            </p>
-          </div>
+          
+          
         </div>
 
         {/* Carousel */}
@@ -44,7 +36,7 @@ const HeroNosotros = () => {
                 <img
                   src={img}
                   alt={`Slide ${index}`}
-                  className='w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500'
+                  className='w-full h-full object-cover   transition-all duration-500'
                 />
               </div>
             ))}
