@@ -224,33 +224,96 @@ const TrustUs = () => {
     return () => ctx.revert()
   }, [])
 
+  const marquee1Ref = useRef(null)
+  const marquee2Ref = useRef(null)
+
+  const handleMarqueeMove = (direction) => {
+    // Move first marquee immediately
+    if (marquee1Ref.current) {
+      marquee1Ref.current.move(direction)
+    }
+
+    // Move second marquee with a slight delay (stagger) for visual effect
+    if (marquee2Ref.current) {
+      setTimeout(() => {
+        marquee2Ref.current.move(direction)
+      }, 150) // 150ms delay
+    }
+  }
+
   return (
     <>
       <section
         ref={containerRef}
         className='my-16 '>
-        <div className='layout-wrap  md:py-12 flex flex-col gap-12  '>
+        <div className='layout-wrap  md:py-12 flex flex-col gap-12 bg-lightground2 '>
           <div className='layout-grid col-span-full  '>
-            <div className='p-4 md:col-span-10 md:col-start-2 col-span-full flex flex-col gap-4 animate-text'>
-              <div className='flex items-center gap-2 '>
-                <div className='h-2 w-2 bg-[#eb1c24] rounded-full '> </div>
+            <div className='p-4 md:col-span-10 md:col-start-2 col-span-full flex flex-col gap-4 animate-text justify-center'>
+              <div
+                className='flex items-center justify-center
+               gap-2 '>
+                {/* <div className='h-2 w-2 bg-[#eb1c24] rounded-full text-center'> </div> */}
                 <p className='text-h3 '> Empresas que confían en nosotros </p>
               </div>
-              <h3 className='text-h6'>
+              <h3 className='text-h6 text-center'>
                 Acompañamos a las empresas en el desarrollo de sus negocios,
                 otorgándoles conocimiento especializado y respaldo en la toma de
                 decisiones.
               </h3>
             </div>
           </div>
-          <BrandsMarquee
-            brands={brands}
-            direction={'left'}
-          />
-          <BrandsMarquee
-            brands={brands2}
-            direction={'right'}
-          />
+
+          <div className='relative'>
+            {/* Shared Controls */}
+            <div className='absolute top-1/2 left-0 -translate-y-1/2 z-10 w-full flex justify-between pointer-events-none px-2 lg:px-4'>
+              <button
+                onClick={() => handleMarqueeMove('prev')} // Left Arrow moves previous (content right)
+                className='bg-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 pointer-events-auto cursor-pointer border border-black/5'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'>
+                  <polyline points='15 18 9 12 15 6'></polyline>
+                </svg>
+              </button>
+
+              <button
+                onClick={() => handleMarqueeMove('next')} // Right Arrow moves next (content left)
+                className='bg-white p-3 rounded-full shadow-lg backdrop-blur-sm transition-all hover:scale-110 pointer-events-auto cursor-pointer border border-black/5'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'>
+                  <polyline points='9 18 15 12 9 6'></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div className='flex flex-col gap-4'>
+              <BrandsMarquee
+                ref={marquee1Ref}
+                brands={brands}
+                direction={'left'}
+              />
+              <BrandsMarquee
+                ref={marquee2Ref}
+                brands={brands2}
+                direction={'right'} // Visual direction prop might be less relevant now if both move same way, but kept for parity
+              />
+            </div>
+          </div>
           <div className='flex justify-center mt-8 pb-12'>
             <Button
               onClick={() => setIsModalOpen(true)}
@@ -266,7 +329,6 @@ const TrustUs = () => {
           />
         </div>
       </section>
-    
     </>
   )
 }

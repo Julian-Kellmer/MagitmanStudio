@@ -40,6 +40,11 @@ const Header = () => {
         {/* Desktop Left: Navigation */}
         <nav className='hidden md:flex space-x-6'>
           <Link
+            to='/'
+            className='text-[var(--text-color)] hover:text-secondary font-medium'>
+            Inicio
+          </Link>
+          <Link
             to='/servicios'
             className='text-[var(--text-color)] hover:text-secondary font-medium'>
             Servicios

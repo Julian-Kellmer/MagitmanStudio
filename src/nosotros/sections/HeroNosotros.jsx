@@ -1,57 +1,31 @@
 import React from 'react'
 
-const images = [
-  '/About1.png',
-  '/About2.png',
-  '/KarinaImg.png',
-  '/GustavoImg.png',
-  '/About1.png',
-  '/About2.png',
-]
-
 const HeroNosotros = () => {
   return (
-    <section className='layout-wrap mb-24'>
-      <div className='layout-grid col-span-full mb-16 '>
+    <section className='layout-wrap '>
+      <div className='layout-grid col-span-full  '>
         {/* Header */}
-        <div className='md:col-span-12 col-span-full flex flex-col gap-6 md:mb-16'>
+        <div className='md:col-span-12 col-span-full flex flex-col gap-6'>
           <div className='flex items-center gap-2'>
             <div className='h-2 w-2 bg-[#eb1c24] rounded-full'></div>
             <p className='text-h2 text-primary font-medium leading-tight max-w-4xl'>
-              Quienes somos
+              Quiénes somos
             </p>
           </div>
-          
-          
         </div>
 
-        {/* Carousel */}
-        <div className='col-span-full overflow-hidden w-full relative'>
-          <div className='flex gap-4 animate-marquee-fast'>
-            {/* First set of images */}
-            {images.map((img, index) => (
-              <div
-                key={index}
-                className='flex-shrink-0 w-[280px] md:w-[600px] aspect-video overflow-hidden rounded-sm'>
-                <img
-                  src={img}
-                  alt={`Slide ${index}`}
-                  className='w-full h-full object-cover   transition-all duration-500'
-                />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {images.map((img, index) => (
-              <div
-                key={`dup-${index}`}
-                className='flex-shrink-0 w-[280px] md:w-[600px] aspect-video overflow-hidden rounded-sm'>
-                <img
-                  src={img}
-                  alt={`Slide ${index}`}
-                  className='w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500'
-                />
-              </div>
-            ))}
+        <div className='md:col-span-12 col-span-full mb-16 flex flex-col gap-6 md:mb-16'>
+          <div className='md:col-span-6 col-span-full'>
+            <p className='text-body text-primary max-w-2xl'>
+              Trabajamos de manera personalizada. Analizamos, asesoramos y
+              buscamos mejoras reales y ahorros impositivos que acompañen el
+              crecimiento de cada negocio. El valor de nuestro estudio reside en
+              las personas que lo conforman. Nuestro equipo acompaña de manera
+              cercana a cada cliente, entendiendo sus necesidades y desafíos. La
+              dedicación de nuestros colaboradores y la confianza de quienes nos
+              eligen hacen posible mantener un nivel de exigencia acorde a un
+              mercado cada vez más competitivo.
+            </p>
           </div>
         </div>
       </div>

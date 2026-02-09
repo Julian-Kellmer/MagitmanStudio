@@ -52,11 +52,12 @@ const Benefits = () => {
           </div>
           <h3 className='text-h6 text-start md:max-w-[80%]'>
             Desde hace más de 30 años brindamos asesoramiento tributario;
-            societario y servicios de auditoría. Lorem ipsum dolor sit, amet
+            societario y servicios de auditoría.<br /><br />
+            <span className='text-black/25'>Lorem ipsum dolor sit, amet
             consectetur adipisicing elit. Autem, impedit atque? Iste, earum
             accusantium quidem, voluptatem, placeat similique eius recusandae
             perferendis dolore obcaecati possimus? Voluptatum, eos eveniet. Cum,
-            animi debitis.
+            animi debitis.</span>
           </h3>
         </div>
         <div
@@ -91,7 +92,12 @@ const Benefits = () => {
           <p className='text-body   text-end md:max-w-[80%]'>
             La capacitación, actualización permanente y solvencia profesional
             son los pilares de nuestro trabajo.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. A cupiditate blanditiis odio. Natus velit unde illum! Odio laudantium excepturi optio corrupti porro sit dolor et aperiam? Voluptatem aperiam similique excepturi?
+            <br /><br />
+            <span className='text-black/25'>Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Autem, impedit atque? Iste, earum
+            accusantium quidem, voluptatem, placeat similique eius recusandae
+            perferendis dolore obcaecati possimus? Voluptatum, eos eveniet. Cum,
+            animi debitis.</span>
           </p>
         </div>
       </div>

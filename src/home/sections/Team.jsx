@@ -93,11 +93,11 @@ const Team = () => {
               Es asesora tributaria del Gobierno de la Ciudad Autónoma de Buenos
               Aires desde el año 2008, desempeñándose en distintas reparticiones
               del mismo. Asesora de empresas privadas nacionales y extranjeras
-              así como de empresas pertenecientes al Estado.{' '}
+              así como de empresas pertenecientes al Estado.{' '} <br />
               {!showMoreKarina && (
                 <span
                   onClick={() => setShowMoreKarina(true)}
-                  className='text-black font-medium text-xs cursor-pointer border-b border-black hover:opacity-70 transition-opacity'>
+                  className='text-secondary font-medium text-xs cursor-pointer border-b border-secondary hover:opacity-70 transition-opacity'>
                   VER MAS
                 </span>
               )}

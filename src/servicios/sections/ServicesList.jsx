@@ -223,7 +223,7 @@ const ServiceItem = ({
         {/* Title Row - Always Visible */}
         <div className='flex items-start justify-between gap-4'>
           <div className='flex items-start gap-3 flex-1'>
-            <span className='text-h4 text-[#eb1c24] font-medium leading-none'>
+            <span className='text-body text-[#eb1c24] font-medium leading-none'>
               {service.number}
             </span>
             <h3 className='text-h5 leading-tight'>{service.title}</h3>
@@ -337,7 +337,7 @@ const ServicesList = () => {
   return (
     <section className='layout-grid col-span-full gap-y-0 '>
       {/* Separator Top */}
-      <div className='col-span-full border-t border-primary opacity-30 w-full mb-8'></div>
+      <div className='col-span-full border-t border-primary opacity-30 w-full '></div>
 
       {servicesData.map((service) => (
         <ServiceItem

@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../../components/Button'
+import React from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -118,16 +119,20 @@ const benefits = [
 
 const BenefitCard = ({ icon, title, description }) => {
   return (
-    <div className='flex flex-col justify-between items-start p-8 bg-white/50 rounded-2xl min-h-[350px] max-w-[550px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 w-full h-full gap-8 group'>
-      <div className='flex flex-col items-start gap-6'>
-        <div className='p-3 border border-black/5 rounded-2xl bg-gray-50 text-primary group-hover:scale-110 transition-transform duration-300'>
-          {icon}
+    <div className='flex flex-col justify-start items-center p-4 min-h-[300px] w-full gap-6 text-center group'>
+      <div className='flex flex-col items-center gap-6'>
+        <div className='p-3 rounded-2xl text-secondary group-hover:scale-110 transition-transform duration-300'>
+          {React.cloneElement(icon, {
+            width: 48,
+            height: 48,
+            strokeWidth: 1.5,
+          })}
         </div>
-        <h4 className='text-h5 font-medium leading-tight text-start text-primary'>
+        <h4 className='text-h5 font-medium leading-tight text-lightground'>
           {title}
         </h4>
       </div>
-      <p className='text-body text-black/60 leading-relaxed text-start'>
+      <p className='text-body text-lightground/80 leading-relaxed max-w-[90%]'>
         {description}
       </p>
     </div>
@@ -135,30 +140,26 @@ const BenefitCard = ({ icon, title, description }) => {
 }
 
 const About = () => {
-  
   return (
-    <section className='layout-wrap  md:py-12 min-h-[100vh] md:mb-24 bg-darkground/10 py-8 md:px-0 px-4'>
-      <div className='layout-grid col-span-full items-start  '>
-        {/* Left Column */}
-        <div className='col-span-full layout-grid px-4 mb-12'>
-          <div className='col-span-10 md:col-start-2 flex flex-col justify-start h-full md:gap-12'>
-            <div className=' flex flex-col gap-6 animate-header w-full '>
-              <h2 className='text-h2 '>
-                Beneficios de trabajar con Estudio Maguitman
-              </h2>
-              <div className='flex md:flex-row flex-col justify-between gap-8 md:items-end'>
-                <p className='text-h6 text-black/70 md:max-w-[50%]'>
-                  Trabajamos de manera personalizada. Analizamos, asesoramos y
-                  buscamos mejoras reales y ahorros impositivos que acompañen el
-                  crecimiento de cada negocio.
-                </p>
-              </div>
-            </div>
+    <section className='layout-wrap md:py-12 min-h-[80vh] md:my-0 bg-primary py-16 md:px-0 px-4 flex flex-col justify-center'>
+      <div className='layout-grid col-span-full items-center gap-y-16'>
+        {/* Header */}
+        <div className='col-span-full layout-grid px-4'>
+          <div className='col-span-12 flex flex-col items-center text-center gap-6 animate-header'>
+            <h2 className='text-h2 text-lightground text-center'>
+              Beneficios de trabajar con <br className='hidden md:block' />{' '}
+              Estudio Maguitman
+            </h2>
+            <p className='text-h6 text-lightground/80 md:max-w-[60%]'>
+              Trabajamos de manera personalizada. Analizamos, asesoramos y
+              buscamos mejoras reales y ahorros impositivos que acompañen el
+              crecimiento de cada negocio.
+            </p>
           </div>
         </div>
 
-        
-        <div className='md:col-span-10 md:col-start-2 col-span-full grid md:grid-cols-2 grid-cols-1 md:gap-8 md:px-0 px-8 gap-y-8 cards-container'>
+        {/* Benefits Grid */}
+        <div className='col-span-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:px-0 px-4 cards-container'>
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}

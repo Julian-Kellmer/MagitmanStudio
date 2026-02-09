@@ -1,7 +1,9 @@
 :root {
-  --background: #f6f6f6;
+  --background: #f1ece6;
+  --warmground: #d6c3a5;
+  --darkground: #1c1c1c;
   --foreground: #1e1e1e;
-  --darkground: #312118;
+  --accent: #c2b8ae;
 }
 
 body {

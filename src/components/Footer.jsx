@@ -50,25 +50,23 @@ const Footer = () => {
                 <h4 className='text-base md:text-lg font-medium mb-1'>
                   Contactanos
                 </h4>
-                <p className='text-sm md:text-body text-black/60'>
-                  +54 9 11 6666 2222
-                </p>
+                
                 <a
-                  href='mailto:Maguitman@gmail.com'
+                  href='mailto:estudio@estudiomaguitman.com.ar'
                   className='text-sm md:text-body text-black/60 hover:text-secondary transition-colors'>
-                  Maguitman@gmail.com
+                  estudio@estudiomaguitman.com.ar
                 </a>
               </div>
 
               <div className='flex flex-col gap-1'>
                 <h4 className='text-base md:text-lg font-medium mb-1'>
-                  Estudio
+                  Av. del Libertador 5936 (1428)
                 </h4>
                 <p className='text-sm md:text-body text-black/60'>
-                  Belgrano CABA,
+                  piso 1 oficina A
                 </p>
                 <p className='text-sm md:text-body text-black/60'>
-                  Cabildo 4367
+                  Ciudad Autónoma de Buenos Aires, República Argentina
                 </p>
               </div>
             </div>
@@ -90,7 +88,7 @@ const Footer = () => {
                 Facebook
               </a>
               <a
-                href='mailto:Maguitman@gmail.com'
+                href='mailto:estudio@estudiomaguitman.com.ar'
                 className='hover:text-secondary transition-colors'>
                 Email
               </a>

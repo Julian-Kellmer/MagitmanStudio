@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import { ChevronIcon } from '../../components/icons/ChevronIcon'
 
 const ArrowIcon = () => (
   <svg
@@ -84,54 +85,73 @@ const associates = [
     role: 'Contadora Publica - Especialista en Precios de Transferencia',
     image: '/SandraDiaz.png',
     linkedin: '#',
-    web: 'contacto@Maguitman.com',
+    web: 'https://www.sdiaz-tax.com',
   },
   {
     id: 102,
     name: 'Ximena Parellada',
-    role: 'Abogada Especialista en Asesoría Jurídica de Empresas UBA (2014)',
+    role: 'Abogada Especialista en Asesoría Jurídica de Empresas',
     image: '/PARELLADAXXimena.png',
     linkedin: '#',
+    web: 'https://www.sdiaz-tax.com',
+    servicios: [
+      'Asesoramiento en materia societaria',
+      ' contractual y sucesoria.',
+      'Transacciones nacionales e internacionales.',
+      'Fusiones, escisiones, transformaciones y reorganizaciones societarias.',
+      'Procesos de debida diligencia legal.',
+      'Representación de accionistas extranjeros.',
+      'Participación en Directorios.',
+      'Asociaciones Civiles y Fundaciones.',
+      'Inscripciones registrales societarias.',
+    ],
   },
   {
     id: 103,
     name: 'Facundo Giampaoli',
     role: 'Abogado',
-    image: '/GIAMPAOLIFacundo.png',
+    image: 'GIAMPAOLIFacundo.jpeg',
     linkedin: '#',
+    web: 'https://www.sdiaz-tax.com',
+    servicios: [
+      'Relaciones individuales de Derecho del Trabajo.',
+      'Accidentes y enfermedades laborales.',
+      'Accidentes y enfermedades de naturaleza inculpables.',
+      'Asesoramiento respecto de inspecciones y sanciones administrativas.',
+      'Contratos modales.',
+      'Seguimiento de expedientes administrativos y judiciales (Poder Judicial de la Nación, Poder Judicial de la Prov. de Buenos Aires, Poder Judicial de C.A.B.A.)',
+    ],
   },
   {
     id: 104,
     name: 'Casandra Alberto',
-    role: 'Contadora Publica, payrroll, servicios laborales y previsionales',
-    image: '/CasandraAlberto.png',
-    web: 'cyaasociados.com.ar',
+    role: 'Contadora Publica, Payrroll, servicios labores y previsionales',
+    image: '/CasandraAlberto.jpeg',
     linkedin: '#',
+    web: 'https://www.sdiaz-tax.com',
+    servicios: [
+      'Liquidación de nómina',
+      'Emisión de recibos de sueldo con firma electrónica y  digital tanto por empleador como por empleado, cumpliendo estándares y marco normativo definidos para documentos PDF.',
+      'Gestión digital de toda la documentación laboral de cada empleado desde su ingreso.',
+      'Cálculo de retención de impuesto a las ganancias',
+      'Confección y presentación de cargas sociales F.931, libro de Sueldos Digital (ARCA) y boletas sindicales',
+      'Altas y bajas en ARCA',
+      'Certificación de servicios',
+      'Generación del libro de sueldos digital.',
+      'Confección de asientos contables de sueldos',
+      'Atención de inspecciones y/o contestación de requerimientos de organismos de control',
+      'Atención de consultas, previsionales y laborales relacionadas con la operatoria normal de liquidación de sueldos',
+    ],
   },
 ]
 
-const ChevronIcon = () => (
-  <svg
-    width='24'
-    height='24'
-    viewBox='0 0 24 24'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'>
-    <path
-      d='M6 9L12 15L18 9'
-      stroke='currentColor'
-      strokeWidth='1.5'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
-  </svg>
-)
-
 const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
+  const hasServices = member.servicios && member.servicios.length > 0
+
   return (
     <div
-      className='border-b border-primary/20 py-6 cursor-pointer group col-span-full md:col-span-1'
-      onClick={() => toggleOpen(member.id)}>
+      className={`border-b border-primary/20 py-6 col-span-full md:col-span-1 ${hasServices ? 'cursor-pointer group' : ''}`}
+      onClick={() => hasServices && toggleOpen(member.id)}>
       <div className='flex flex-col gap-4'>
         {/* Header Row */}
         <div className='flex justify-between items-center'>
@@ -143,6 +163,7 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
               </h4>
               <p className='text-sm text-black/60'>{member.role}</p>
             </div>
+            {/* Linkedin Link */}
             {member.linkedin && member.linkedin !== '#' && (
               <a
                 href={member.linkedin}
@@ -154,36 +175,65 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
               </a>
             )}
           </div>
-          {/* Indicator Icon */}
-          <div
-            className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-            <ChevronIcon />
+          <div className='w-30 h-30'>
+            <img
+              src={member.image}
+              alt={member.name}
+              className='w-full h-full rounded-full object-cover'
+            />
           </div>
+          {/* Indicator Icon - Only show if has services */}
+          {hasServices && (
+            <div
+              className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+              <svg
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'>
+                <polyline points='6 9 12 15 18 9'></polyline>
+              </svg>
+            </div>
+          )}
         </div>
 
-        {/* Body (Expanded) */}
+        {/* Body (Expanded) - Only has services and web link now */}
         <div
           className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
           <div className='overflow-hidden min-h-0'>
-            <div className='flex md:flex-row flex-col gap-8 pt-4 items-start'>
-              <div className='w-[150px] h-[150px] md:w-[250px] md:h-[250px] rounded-lg overflow-hidden  transition-all duration-500 shrink-0'>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className='w-full h-full object-cover'
-                />
-              </div>
-              <div className='flex flex-col gap-2 justify-center h-full pt-2'>
-                {member.web && (
+            <div className='pt-4'>
+              {/* Services List Directly */}
+              {hasServices && (
+                <div className='w-full'>
+                  <ul className='pl-4 list-disc space-y-2 text-sm text-gray-600'>
+                    {member.servicios.map((servicio, idx) => (
+                      <li
+                        key={idx}
+                        className='pl-1'>
+                        {servicio}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Web Link at the bottom if exists */}
+              {member.web && (
+                <div className='mt-4'>
                   <a
-                    href={`https://${member.web}`}
+                    href={member.web}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-[#eb1c24] transition-colors'>
+                    onClick={(e) => e.stopPropagation()}
+                    className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-[#eb1c24] transition-colors w-fit'>
                     Web <ArrowIcon />
                   </a>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -202,22 +252,6 @@ const TeamList = () => {
   return (
     <section className='layout-wrap '>
       <div className='layout-grid col-span-full items-start'>
-        {/* Intro Text */}
-        <div className='md:col-span-12 col-span-full mb-16 flex flex-col gap-6 md:mb-16'>
-          <div className='md:col-span-6 col-span-full'>
-            <p className='text-body text-primary max-w-2xl'>
-              Trabajamos de manera personalizada. Analizamos, asesoramos y
-              buscamos mejoras reales y ahorros impositivos que acompañen el
-              crecimiento de cada negocio. El valor de nuestro estudio reside en
-              las personas que lo conforman. Nuestro equipo acompaña de manera
-              cercana a cada cliente, entendiendo sus necesidades y desafíos. La
-              dedicación de nuestros colaboradores y la confianza de quienes nos
-              eligen hacen posible mantener un nivel de exigencia acorde a un
-              mercado cada vez más competitivo.
-            </p>
-          </div>
-        </div>
-
         {/* Main Team List - Left Side */}
         {/* Main Team List */}
         <div className='col-span-full layout-grid '>
