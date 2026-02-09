@@ -23,12 +23,12 @@ const Team = () => {
   const [showMoreKarina, setShowMoreKarina] = useState(false)
   return (
     <section
-      className='layout-wrap py-8 md:px-0 px-4 transition-[background] duration-500'
+      className='layout-wrap py-8 md:py-16 md:px-0 px-4 transition-[background] duration-500'
       style={{ background: 'var(--bg-team)' }}
       id='team'>
       <div className='layout-grid col-span-full md:mb-24 mb-12'>
         <div className='md:col-span-10 col-span-full md:col-start-2 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
-          <h2 className='text-h2 leading-none font-medium'>
+          <h2 className='text-text-team-title text-h2 leading-none font-medium transition-colors duration-500'>
             Equipo Estudio Maguitman & ASOC
           </h2>
           <Link to='/nosotros'>
@@ -52,7 +52,7 @@ const Team = () => {
         {/* Spacer - Col 6 (Span 1) - Implicit by starting content at 7 */}
 
         {/* Content - Col 7 to 11 (Span 5) */}
-        <div className='md:col-span-5 col-span-full md:col-start-7 flex flex-col gap-8'>
+        <div className='md:col-span-5 col-span-full md:col-start-7 flex flex-col gap-8 text-text-team-title'>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-4'>
               <div className='h-3 w-3 bg-secondary rounded-full shrink-0'></div>
@@ -78,12 +78,12 @@ const Team = () => {
                 </a>
               </div>
             </div>
-            <p className='text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
+            <p className='text-text-team-title text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
               LIDER DEL ESTUDIO Maguitman
             </p>
           </div>
 
-          <div className='flex flex-col gap-6 ml-7 text-body text-black/70'>
+          <div className='text-text-team-title flex flex-col gap-6 ml-7 text-body text-black/70'>
             <p>
               Karina Maguitman es Contadora Pública egresada de la Facultad de
               Ciencias Económicas de la Universidad de Buenos Aires y
@@ -98,7 +98,7 @@ const Team = () => {
               {!showMoreKarina && (
                 <span
                   onClick={() => setShowMoreKarina(true)}
-                  className='text-secondary font-medium text-xs cursor-pointer border-b border-secondary hover:opacity-70 transition-opacity'>
+                  className=' text-secondary font-medium text-xs cursor-pointer border-b border-secondary hover:opacity-70 transition-opacity'>
                   VER MAS
                 </span>
               )}

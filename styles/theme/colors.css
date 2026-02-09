@@ -13,6 +13,7 @@
 
   /* Team Section Variables */
   --bg-team: transparent;
+  --text-team-title: #1e1e1e;
 }
 
 [data-theme='mode-2'] {
@@ -30,6 +31,7 @@
 
   /* Team Section Mode 2 (Inverted Gradient: Purple -> White) */
   --bg-team: linear-gradient(180deg, #927eff 0%, #ffffff 100%);
+  --text-team-title: #ffffff;
 }
 
 @theme {
@@ -44,4 +46,7 @@
   /* About Section */
   --color-bg-about: var(--bg-about);
   --color-text-about: var(--text-about);
+
+  /* Team Section */
+  --color-text-team-title: var(--text-team-title);
 }
