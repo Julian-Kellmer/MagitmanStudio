@@ -86,6 +86,17 @@ const associates = [
     image: '/SandraDiaz.png',
     linkedin: '#',
     web: 'https://www.sdiaz-tax.com',
+    servicios: [
+      'Estudios de Precios de Transferencia',
+      'Preparación Informe Maestro',
+      'Reporte País por País',
+      'Acuerdos de Contribución de Costos',
+      'Centro de Servicios Compartidos',
+      'Planificación Fiscal Internacional',
+      'Acuerdos Anticipados de Precios',
+      'Transacciones con Intangibles',
+      'Benchmarking para relocalización de funciones',
+    ],
   },
   {
     id: 102,
@@ -158,7 +169,7 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
           <div className='flex flex-col gap-2'>
             <div>
               <h4
-                className={`text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#eb1c24]' : 'text-primary'}`}>
+                className={`text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-secondary' : 'text-primary'}`}>
                 {member.name}
               </h4>
               <p className='text-sm text-black/60'>{member.role}</p>
@@ -170,7 +181,7 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
                 target='_blank'
                 rel='noopener noreferrer'
                 onClick={(e) => e.stopPropagation()}
-                className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-[#eb1c24] transition-colors w-fit'>
+                className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-secondary transition-colors w-fit'>
                 Linkedin <ArrowIcon />
               </a>
             )}
@@ -229,7 +240,7 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
                     target='_blank'
                     rel='noopener noreferrer'
                     onClick={(e) => e.stopPropagation()}
-                    className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-[#eb1c24] transition-colors w-fit'>
+                    className='flex items-center gap-2 text-sm uppercase tracking-wider font-medium hover:text-secondary transition-colors w-fit'>
                     Web <ArrowIcon />
                   </a>
                 </div>

@@ -47,7 +47,7 @@ const Benefits = () => {
           id='animation'
           className='md:col-span-5 md:col-start-2 col-span-full flex flex-col gap-4 px-4 md:px-0'>
           <div className='flex items-center gap-2 '>
-            <div className='h-2 w-2 bg-[#eb1c24] rounded-full '> </div>
+            <div className='h-2 w-2 bg-secondary rounded-full '> </div>
             <p className='text-h3 '> Acerca de nosotros </p>
           </div>
           <h3 className='text-h6 text-start md:max-w-[80%]'>
@@ -85,7 +85,7 @@ const Benefits = () => {
           className=' px-4 md:px-0 md:col-span-5 col-span-full flex flex-col justify-start gap-4 items-end text-end'>
           <div className='flex  gap-2 '>
             <h3 className='text-h3 text-start'>En nuestro estudio</h3>
-            <div className='h-2 w-2 bg-[#eb1c24] rounded-full self-center'>
+            <div className='h-2 w-2 bg-secondary rounded-full self-center'>
               {' '}
             </div>
           </div>

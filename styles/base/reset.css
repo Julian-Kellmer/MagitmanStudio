@@ -7,7 +7,19 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--app-bg); /* Using the raw variable for background */
   color: var(--foreground);
   font-family: var(--font-pp);
+  transition:
+    background 0.5s ease,
+    color 0.3s ease;
+}
+
+/* Add generic transition for all elements that use theme colors */
+*,
+*::before,
+*::after {
+  transition-property: color, background-color, border-color, stroke, fill;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }

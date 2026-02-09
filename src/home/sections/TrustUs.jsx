@@ -252,7 +252,7 @@ const TrustUs = () => {
               <div
                 className='flex items-center justify-center
                gap-2 '>
-                {/* <div className='h-2 w-2 bg-[#eb1c24] rounded-full text-center'> </div> */}
+                {/* <div className='h-2 w-2 bg-secondary rounded-full text-center'> </div> */}
                 <p className='text-h3 '> Empresas que confían en nosotros </p>
               </div>
               <h3 className='text-h6 text-center'>
@@ -317,7 +317,7 @@ const TrustUs = () => {
           <div className='flex justify-center mt-8 pb-12'>
             <Button
               onClick={() => setIsModalOpen(true)}
-              className='bg-transparent text-primary hover:bg-primary hover:text-white border border-secondary transition-all duration-300'>
+              className='bg-secondary text-white hover:bg-primary hover:text-white border border-secondary transition-all duration-300'>
               Ver todos Nuestros Clientes
             </Button>
           </div>

@@ -3,34 +3,35 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='bg-tertiary/30'>
-      <div className='layout-wrap  pt-12 pb-8 border-t border-black/5'>
-        <div className='layout-grid col-span-full  pt-12 md:pt-12 pb-8 px-4 md:px-8 rounded-lg'>
-          {/* Top Section: Logo & Title */}
-          <div className='col-span-full flex flex-col items-center justify-center gap-4 md:gap-6 mb-6 md:mb-12'>
+    <footer className='bg-white pt-16 pb-8 border-t border-black/5'>
+      <div className='layout-wrap'>
+        {/* Main Grid: 4 Columns on Desktop, 1 on Mobile */}
+        <div className='col-span-full grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16 px-4 md:px-0'>
+          {/* Column 1: Logo & Slogan */}
+          <div className='flex flex-col items-center md:items-start gap-6'>
             <img
               src='/isotipo.svg'
               alt='Estudio Maguitman Logo'
-              className='h-16 md:h-24 opacity-80'
+              className='h-20 opacity-90'
             />
-            <div className='text-center'>
-              <h2 className='text-xl md:text-h3 uppercase tracking-widest font-normal text-primary mb-2'>
+            <div className='text-center md:text-left'>
+              <h2 className='text-lg uppercase tracking-widest font-medium text-primary mb-2'>
                 Estudio Maguitman & ASOC
               </h2>
-              <p className='text-sm md:text-lg font-light text-black/60 tracking-wide'>
+              <p className='text-sm font-light text-black/60 tracking-wider'>
                 Consultores Tributarios y Auditores
               </p>
             </div>
           </div>
 
-          {/* Middle Section: Links & Contact */}
-          <div className='col-span-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 mb-12 md:mb-12'>
-            {/* Left: Navigation */}
-            <div className='md:col-span-3 flex flex-col gap-3 items-center md:items-start text-body text-primary/80 uppercase tracking-wide text-sm font-medium'>
+          {/* Column 2: Navigation Links */}
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h4 className='text-primary font-medium text-lg mb-2'>Menu</h4>
+            <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60 font-medium uppercase tracking-wide'>
               <Link
                 to='/'
                 className='hover:text-secondary transition-colors'>
-                Home
+                Inicio
               </Link>
               <Link
                 to='/servicios'
@@ -40,39 +41,38 @@ const Footer = () => {
               <Link
                 to='/nosotros'
                 className='hover:text-secondary transition-colors'>
-                About us
+                Nosotros
               </Link>
             </div>
+          </div>
 
-            {/* Center: Contact Info */}
-            <div className='md:col-span-6 flex flex-col items-center text-center gap-6 md:gap-8'>
-              <div className='flex flex-col gap-1'>
-                <h4 className='text-base md:text-lg font-medium mb-1'>
-                  Contactanos
-                </h4>
-                
-                <a
-                  href='mailto:estudio@estudiomaguitman.com.ar'
-                  className='text-sm md:text-body text-black/60 hover:text-secondary transition-colors'>
-                  estudio@estudiomaguitman.com.ar
-                </a>
-              </div>
-
-              <div className='flex flex-col gap-1'>
-                <h4 className='text-base md:text-lg font-medium mb-1'>
-                  Av. del Libertador 5936 (1428)
-                </h4>
-                <p className='text-sm md:text-body text-black/60'>
-                  piso 1 oficina A
-                </p>
-                <p className='text-sm md:text-body text-black/60'>
-                  Ciudad Autónoma de Buenos Aires, República Argentina
-                </p>
+          {/* Column 3: Contact */}
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h4 className='text-primary font-medium text-lg mb-2'>
+              Contactanos
+            </h4>
+            <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60'>
+              <a
+                href='tel:+549116662222'
+                className='hover:text-secondary transition-colors'>
+                + 549 11666-2222
+              </a>
+              <a
+                href='mailto:Maguitman@gmail.com'
+                className='hover:text-secondary transition-colors break-all'>
+                Maguitman@gmail.com
+              </a>
+              <div className='text-center md:text-left'>
+                <p>Belgrano CABA,</p>
+                <p>Cabildo 4367</p>
               </div>
             </div>
+          </div>
 
-            {/* Right: Social Links */}
-            <div className='md:col-span-3 flex flex-col gap-3 items-center md:items-end text-body text-primary/80 uppercase tracking-wide text-sm font-medium'>
+          {/* Column 4: Social */}
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h4 className='text-primary font-medium text-lg mb-2'>Seguinos</h4>
+            <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60 font-medium uppercase tracking-wide'>
               <a
                 href='#'
                 target='_blank'
@@ -80,33 +80,34 @@ const Footer = () => {
                 className='hover:text-secondary transition-colors'>
                 Linkedin
               </a>
-              <a
-                href='#'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='hover:text-secondary transition-colors'>
-                Facebook
-              </a>
-              <a
-                href='mailto:estudio@estudiomaguitman.com.ar'
-                className='hover:text-secondary transition-colors'>
-                Email
-              </a>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Section: Copyright */}
-          <div className='col-span-full border-t border-black/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-black/40 uppercase tracking-wider gap-4'>
-            <p className='text-center md:text-left'>
-              Copyright 2024, Todos los derechos reservados
-            </p>
-            <p className='text-center'>Developer, Kallman Julian</p>
-            <div className='flex flex-col md:flex-row gap-4 md:gap-8 text-center'>
+        {/* Bottom Bar: 4 Columns alignment/Stack */}
+        <div className='col-span-full border-t border-black/10 pt-8'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-4 items-center text-xs text-black/40 uppercase tracking-wider text-center md:text-left'>
+            {/* 1. Copyright */}
+            <div className='md:col-span-1'>
+              <p>Copyright 2026, Todos los derechos reservados</p>
+            </div>
+
+            {/* 2. Developer */}
+            <div className='md:col-span-1 flex justify-center md:justify-start'>
+              <p>Developer, Kellmer Julian</p>
+            </div>
+
+            {/* 3. Terms */}
+            <div className='md:col-span-1 flex justify-center md:justify-start'>
               <Link
                 to='/terms'
                 className='hover:text-primary transition-colors'>
                 Terminos & Condiciones
               </Link>
+            </div>
+
+            {/* 4. Privacy */}
+            <div className='md:col-span-1 flex justify-center md:justify-start'>
               <Link
                 to='/privacy'
                 className='hover:text-primary transition-colors'>

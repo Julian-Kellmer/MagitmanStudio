@@ -23,7 +23,8 @@ const Team = () => {
   const [showMoreKarina, setShowMoreKarina] = useState(false)
   return (
     <section
-      className='layout-wrap md:mb-32  mb-12 py-8 md:px-0 px-4 '
+      className='layout-wrap py-8 md:px-0 px-4 transition-[background] duration-500'
+      style={{ background: 'var(--bg-team)' }}
       id='team'>
       <div className='layout-grid col-span-full md:mb-24 mb-12'>
         <div className='md:col-span-10 col-span-full md:col-start-2 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
@@ -31,7 +32,7 @@ const Team = () => {
             Equipo Estudio Maguitman & ASOC
           </h2>
           <Link to='/nosotros'>
-            <Button className='flex items-center gap-2 text-[#eb1c24] hover:opacity-80 !p-0 font-medium border-b border-[#eb1c24] rounded-none pb-1 w-fit mt-4'>
+            <Button className='flex items-center gap-2 text-secondary hover:opacity-80 !p-0 font-medium border-b border-secondary rounded-none pb-1 w-fit mt-4'>
               Conoce mas <ArrowIcon />
             </Button>
           </Link>
@@ -54,7 +55,7 @@ const Team = () => {
         <div className='md:col-span-5 col-span-full md:col-start-7 flex flex-col gap-8'>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-4'>
-              <div className='h-3 w-3 bg-[#eb1c24] rounded-full shrink-0'></div>
+              <div className='h-3 w-3 bg-secondary rounded-full shrink-0'></div>
               <h3 className='text-h4 font-medium'>Karina Maguitman</h3>
               <div className='flex gap-2 ml-2'>
                 <a
@@ -93,7 +94,7 @@ const Team = () => {
               Es asesora tributaria del Gobierno de la Ciudad Autónoma de Buenos
               Aires desde el año 2008, desempeñándose en distintas reparticiones
               del mismo. Asesora de empresas privadas nacionales y extranjeras
-              así como de empresas pertenecientes al Estado.{' '} <br />
+              así como de empresas pertenecientes al Estado. <br />
               {!showMoreKarina && (
                 <span
                   onClick={() => setShowMoreKarina(true)}
@@ -147,7 +148,7 @@ const Team = () => {
         <div className='md:col-span-5 col-span-full md:col-start-2 flex flex-col gap-8'>
           <div className='flex flex-col gap-2'>
             <div className='flex items-center gap-4'>
-              <div className='h-3 w-3 bg-[#eb1c24] rounded-full shrink-0'></div>
+              <div className='h-3 w-3 bg-secondary rounded-full shrink-0'></div>
               <h3 className='text-h4 font-medium'>Gustavo Warcevitzky</h3>
               <div className='flex gap-2 ml-2'>
                 <a

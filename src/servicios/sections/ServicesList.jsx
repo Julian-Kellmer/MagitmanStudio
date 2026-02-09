@@ -58,7 +58,7 @@ const servicesData = [
         <p className='font-medium mb-2'>
           Con ese objetivo brindamos los siguientes servicios:
         </p>
-        <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+        <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
           <li>
             Planeamiento tributario: análisis de los aspectos impositivos de las
             distintas alternativas de inversión y/o expansión de los negocios.
@@ -95,7 +95,7 @@ const servicesData = [
           Mediante el trabajo conjunto con abogados tributaristas de nuestro
           equipo, asistimos en:
         </p>
-        <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+        <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
           <li>Defensas ante inspecciones y requerimientos fiscales.</li>
           <li>Atención de inspecciones integrales.</li>
           <li>Contestación de vistas y requerimientos.</li>
@@ -110,7 +110,7 @@ const servicesData = [
     title: 'Operaciones Internacionales',
     intro: 'Nuestros servicios comprenden:',
     description: (
-      <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+      <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
         <li>
           Análisis de la aplicación de convenios para evitar la doble imposición
           internacional.
@@ -139,7 +139,7 @@ const servicesData = [
           considerando la evaluación de las normas contables profesionales.
         </p>
         <p className='font-medium mb-2'>Nuestros servicios abarcan:</p>
-        <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+        <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
           <li>
             Auditoría de Estados Contables anuales y de períodos intermedios.
           </li>
@@ -178,7 +178,7 @@ const servicesData = [
     intro:
       'Brindamos, entre otros, los siguientes servicios junto con nuestro equipo legal:',
     description: (
-      <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+      <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
         <li>Constitución de sociedades, sucursales y asociaciones civiles.</li>
         <li>Reformas de estatutos, aumentos y reducción de capital.</li>
         <li>Transformación, fusión, escisión y disolución de sociedades.</li>
@@ -195,7 +195,7 @@ const servicesData = [
     title: 'Payroll',
     intro: 'Ver Servicios:',
     description: (
-      <ul className='list-disc pl-5 space-y-1 marker:text-[#eb1c24]'>
+      <ul className='list-disc pl-5 space-y-1 marker:text-secondary'>
         <li>Liquidación de sueldos y jornales.</li>
         <li>Liquidación de cargas sociales y sindicatos.</li>
         <li>Libro Especial de Sueldos y Jornales.</li>
@@ -223,12 +223,12 @@ const ServiceItem = ({
         {/* Title Row - Always Visible */}
         <div className='flex items-start justify-between gap-4'>
           <div className='flex items-start gap-3 flex-1'>
-            <span className='text-body text-[#eb1c24] font-medium leading-none'>
+            <span className='text-body text-secondary font-medium leading-none'>
               {service.number}
             </span>
             <h3 className='text-h5 leading-tight'>{service.title}</h3>
           </div>
-          <div className='flex-shrink-0 text-[#eb1c24]'>
+          <div className='flex-shrink-0 text-secondary'>
             <ChevronDown isOpen={isOpen} />
           </div>
         </div>
@@ -250,7 +250,7 @@ const ServiceItem = ({
                     e.stopPropagation()
                     handleWhatsAppClick(service.title)
                   }}
-                  className='flex items-center gap-2 text-[#eb1c24] border border-secondary bg-[#FDF6F3] rounded-full px-6 py-2 hover:bg-[#eb1c24] hover:text-white transition-all duration-300'>
+                  className='flex items-center gap-2 text-secondary border border-secondary bg-[#FDF6F3] rounded-full px-6 py-2 hover:bg-secondary hover:text-white transition-all duration-300'>
                   Contactar este servicio <ArrowIcon />
                 </Button>
               </div>
@@ -263,7 +263,7 @@ const ServiceItem = ({
       <div className='hidden md:contents'>
         {/* Left Side: Number + Title */}
         <div className='col-span-5 col-start-2 flex items-start gap-8'>
-          <span className='text-h3 text-[#eb1c24] font-medium leading-none'>
+          <span className='text-h3 text-secondary font-medium leading-none'>
             {service.number}
           </span>
           <h3 className='text-h4'>{service.title}</h3>
@@ -282,7 +282,7 @@ const ServiceItem = ({
               <div className='flex flex-col gap-6'>
                 <p className='text-body text-black/70'>{service.intro}</p>
                 <div className='flex justify-end mt-2'>
-                  <div className='flex items-center gap-2 text-[#eb1c24] font-medium'>
+                  <div className='flex items-center gap-2 text-secondary font-medium'>
                     Ver servicio <ChevronDown isOpen={isOpen} />
                   </div>
                 </div>
@@ -308,7 +308,7 @@ const ServiceItem = ({
                       e.stopPropagation()
                       handleWhatsAppClick(service.title)
                     }}
-                    className='flex items-center gap-2 text-[#eb1c24] border border-secondary bg-[#FDF6F3] rounded-full px-6 py-2 hover:bg-[#eb1c24] hover:text-white transition-all duration-300'>
+                    className='flex items-center gap-2 text-secondary border border-secondary bg-[#FDF6F3] rounded-full px-6 py-2 hover:bg-secondary hover:text-white transition-all duration-300'>
                     Contactar este servicio <ArrowIcon />
                   </Button>
                 </div>

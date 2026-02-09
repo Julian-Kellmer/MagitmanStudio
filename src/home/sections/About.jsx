@@ -128,11 +128,11 @@ const BenefitCard = ({ icon, title, description }) => {
             strokeWidth: 1.5,
           })}
         </div>
-        <h4 className='text-h5 font-medium leading-tight text-lightground'>
+        <h4 className='text-h5 font-medium leading-tight text-text-about transition-colors duration-500'>
           {title}
         </h4>
       </div>
-      <p className='text-body text-lightground/80 leading-relaxed max-w-[90%]'>
+      <p className='text-body text-text-about/80 leading-relaxed max-w-[90%] transition-colors duration-500'>
         {description}
       </p>
     </div>
@@ -141,16 +141,16 @@ const BenefitCard = ({ icon, title, description }) => {
 
 const About = () => {
   return (
-    <section className='layout-wrap md:py-12 min-h-[80vh] md:my-0 bg-primary py-16 md:px-0 px-4 flex flex-col justify-center'>
+    <section className='layout-wrap md:py-12 min-h-[80vh] md:my-0 bg-bg-about py-16 md:px-0 px-4 flex flex-col justify-center transition-colors duration-500'>
       <div className='layout-grid col-span-full items-center gap-y-16'>
         {/* Header */}
         <div className='col-span-full layout-grid px-4'>
           <div className='col-span-12 flex flex-col items-center text-center gap-6 animate-header'>
-            <h2 className='text-h2 text-lightground text-center'>
+            <h2 className='text-h2 text-text-about text-center transition-colors duration-500'>
               Beneficios de trabajar con <br className='hidden md:block' />{' '}
               Estudio Maguitman
             </h2>
-            <p className='text-h6 text-lightground/80 md:max-w-[60%]'>
+            <p className='text-h6 text-text-about/80 md:max-w-[60%] transition-colors duration-500'>
               Trabajamos de manera personalizada. Analizamos, asesoramos y
               buscamos mejoras reales y ahorros impositivos que acompañen el
               crecimiento de cada negocio.
