@@ -159,7 +159,7 @@ const BrandsModal = ({ isOpen, onClose, allBrands }) => {
               <img
                 src={brand.image}
                 alt={brand.name}
-                className='w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300'
+                className='w-full h-full object-contain  transition-all duration-300'
               />
             </a>
           ))}

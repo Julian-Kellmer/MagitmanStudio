@@ -26,8 +26,8 @@ const Footer = () => {
 
           {/* Column 2: Navigation Links */}
           <div className='flex flex-col items-center md:items-start gap-4'>
-            <h4 className='text-primary font-medium text-lg mb-2'>Menu</h4>
-            <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60 font-medium uppercase tracking-wide'>
+            <h4 className='text-white font-medium text-lg mb-2'>Menu</h4>
+            <div className='flex flex-col gap-3 items-center md:items-start text-sm text-white font-medium uppercase tracking-wide'>
               <Link
                 to='/'
                 className='hover:text-secondary transition-colors'>
@@ -66,36 +66,19 @@ const Footer = () => {
 
           {/* Column 4: Social */}
           <div className='flex flex-col items-center md:items-start gap-4'>
-            <h4 className='text-primary font-medium text-lg mb-2'>Seguinos</h4>
+            <h4 className='text-primary font-medium text-lg mb-2'>Encontranos en</h4>
             <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60 font-medium uppercase tracking-wide'>
               <a
                 href='https://www.linkedin.com/in/karina-maguitman-74872b25/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='hover:text-secondary transition-colors flex items-center gap-2'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='18'
-                  height='18'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'>
-                  <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
-                  <rect
-                    width='4'
-                    height='12'
-                    x='2'
-                    y='9'
+                className='hover:text-secondary transition-colors flex items-center gap-2 capitalize'>
+                <div className='h-5 w-5'>
+                  <img
+                    src='Linkedin.svg'
+                    alt='Social'
                   />
-                  <circle
-                    cx='4'
-                    cy='4'
-                    r='2'
-                  />
-                </svg>
+                </div>
                 Estudio Maguitman
               </a>
             </div>

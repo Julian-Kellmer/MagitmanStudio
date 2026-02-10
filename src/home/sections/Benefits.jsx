@@ -41,7 +41,7 @@ const Benefits = () => {
   return (
     <section
       ref={containerRef}
-      className=' layout-wrap pt-12 flex flex-col justify-center gap-12'>
+      className=' layout-wrap py-12 flex flex-col justify-center gap-12'>
       <div className='layout-grid col-span-full animate-item'>
         <div
           id='animation'
