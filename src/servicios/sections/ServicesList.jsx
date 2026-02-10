@@ -337,7 +337,7 @@ const ServicesList = () => {
   return (
     <section className='layout-grid col-span-full gap-y-0 '>
       {/* Separator Top */}
-      <div className='col-span-full border-t border-primary opacity-30 w-full '></div>
+      <div className='col-span-full  w-full '></div>
 
       {servicesData.map((service) => (
         <ServiceItem

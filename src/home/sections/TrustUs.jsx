@@ -58,8 +58,7 @@ const brands = [
     image: '/clientes/Capa10.png',
     url: 'https://limudba.org/nosotros/',
   },
-]
-const brands2 = [
+
   {
     name: 'Universidad de Buenos Aires',
     image: '/clientes/Capa11.png',
@@ -177,7 +176,7 @@ const BrandsModal = ({ isOpen, onClose, allBrands }) => {
 const TrustUs = () => {
   const containerRef = useRef(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const allBrands = [...brands, ...brands2]
+  const allBrands = [...brands]
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -245,7 +244,7 @@ const TrustUs = () => {
     <>
       <section
         ref={containerRef}
-        className='my-16 '>
+        className=' '>
         <div className='layout-wrap  md:py-12 flex flex-col gap-12 bg-lightground2 '>
           <div className='layout-grid col-span-full  '>
             <div className='p-4 md:col-span-10 md:col-start-2 col-span-full flex flex-col gap-4 animate-text justify-center'>
@@ -307,17 +306,17 @@ const TrustUs = () => {
                 brands={brands}
                 direction={'left'}
               />
-              <BrandsMarquee
+              {/* <BrandsMarquee
                 ref={marquee2Ref}
                 brands={brands2}
                 direction={'right'} // Visual direction prop might be less relevant now if both move same way, but kept for parity
-              />
+              /> */}
             </div>
           </div>
           <div className='flex justify-center mt-8 pb-12'>
             <Button
               onClick={() => setIsModalOpen(true)}
-              className='bg-secondary text-white hover:bg-primary hover:text-white border border-secondary transition-all duration-300'>
+              className='bg-secondary text-white hover:bg-secondary/80 hover:text-white border border-secondary transition-all duration-300'>
               Ver todos Nuestros Clientes
             </Button>
           </div>

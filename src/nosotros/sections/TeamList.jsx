@@ -186,30 +186,32 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
               </a>
             )}
           </div>
-          <div className='w-30 h-30'>
-            <img
-              src={member.image}
-              alt={member.name}
-              className='w-full h-full rounded-full object-cover'
-            />
-          </div>
-          {/* Indicator Icon - Only show if has services */}
-          {hasServices && (
-            <div
-              className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-              <svg
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'>
-                <polyline points='6 9 12 15 18 9'></polyline>
-              </svg>
+          <div className='flex items-center gap-4'>
+            <div className='w-30 h-30'>
+              <img
+                src={member.image}
+                alt={member.name}
+                className='w-full h-full rounded-full object-cover'
+              />
             </div>
-          )}
+            {/* Indicator Icon - Only show if has services */}
+            {hasServices && (
+              <div
+                className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                <svg
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'>
+                  <polyline points='6 9 12 15 18 9'></polyline>
+                </svg>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Body (Expanded) - Only has services and web link now */}

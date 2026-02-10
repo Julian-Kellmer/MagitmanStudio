@@ -53,18 +53,13 @@ const Footer = () => {
             </h4>
             <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60'>
               <a
-                href='tel:+549116662222'
-                className='hover:text-secondary transition-colors'>
-                + 549 11666-2222
-              </a>
-              <a
-                href='mailto:Maguitman@gmail.com'
+                href='mailto:estudio@estudiomaguitman.com.ar'
                 className='hover:text-secondary transition-colors break-all'>
-                Maguitman@gmail.com
+                estudio@estudiomaguitman.com.ar
               </a>
               <div className='text-center md:text-left'>
-                <p>Belgrano CABA,</p>
-                <p>Cabildo 4367</p>
+                <p>Av. del Libertador 5936, Piso 1 oficina A (1228)</p>
+                <p>CABA, República Argentina</p>
               </div>
             </div>
           </div>
@@ -74,11 +69,34 @@ const Footer = () => {
             <h4 className='text-primary font-medium text-lg mb-2'>Seguinos</h4>
             <div className='flex flex-col gap-3 items-center md:items-start text-sm text-black/60 font-medium uppercase tracking-wide'>
               <a
-                href='#'
+                href='https://www.linkedin.com/in/karina-maguitman-74872b25/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='hover:text-secondary transition-colors'>
-                Linkedin
+                className='hover:text-secondary transition-colors flex items-center gap-2'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='18'
+                  height='18'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'>
+                  <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' />
+                  <rect
+                    width='4'
+                    height='12'
+                    x='2'
+                    y='9'
+                  />
+                  <circle
+                    cx='4'
+                    cy='4'
+                    r='2'
+                  />
+                </svg>
+                Estudio Maguitman
               </a>
             </div>
           </div>

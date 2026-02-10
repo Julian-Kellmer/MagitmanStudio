@@ -98,22 +98,22 @@ const benefits = [
   {
     icon: <UserIcon />,
     title: 'Atencion personalizada',
-    description: 'El cliente trabaja directamente con los socios del estudio.',
+    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
   },
   {
     icon: <ChartIcon />,
     title: 'Experiencia y trayectoria comprobada',
-    description: 'El cliente trabaja directamente con los socios del estudio.',
+    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
   },
   {
     icon: <BookIcon />,
     title: 'Cumplimiento y tranquilidad',
-    description: 'El cliente trabaja directamente con los socios del estudio.',
+    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
   },
   {
     icon: <BellIcon />,
     title: 'Acompañamiento constante',
-    description: 'El cliente trabaja directamente con los socios del estudio.',
+    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
   },
 ]
 
@@ -147,7 +147,7 @@ const About = () => {
         <div className='col-span-full layout-grid px-4'>
           <div className='col-span-12 flex flex-col items-center text-center gap-6 animate-header'>
             <h2 className='text-h2 text-text-about text-center transition-colors duration-500'>
-              Beneficios de trabajar con <br className='hidden md:block' />{' '}
+              Beneficios de trabajar con 
               Estudio Maguitman
             </h2>
             <p className='text-h6 text-text-about/80 md:max-w-[60%] transition-colors duration-500'>
