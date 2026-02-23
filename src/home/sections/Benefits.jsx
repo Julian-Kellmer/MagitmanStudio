@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useTranslation } from '../../i18n/context.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Benefits = () => {
   const containerRef = useRef(null)
+  const { t } = useTranslation('home')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,16 +50,13 @@ const Benefits = () => {
           className='md:col-span-5 md:col-start-2 col-span-full flex flex-col gap-4 px-4 md:px-0'>
           <div className='flex items-center gap-2 '>
             <div className='h-2 w-2 bg-secondary rounded-full '> </div>
-            <p className='text-h3 '> Acerca de nosotros </p>
+            <p className='text-h3 '> {t('benefits.aboutUs')} </p>
           </div>
-          <h3 className='text-h6 text-start md:max-w-[80%]'>
-            Desde hace más de 30 años brindamos asesoramiento tributario;
-            societario y servicios de auditoría.<br /><br />
-            <span className='text-black/25'>Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Autem, impedit atque? Iste, earum
-            accusantium quidem, voluptatem, placeat similique eius recusandae
-            perferendis dolore obcaecati possimus? Voluptatum, eos eveniet. Cum,
-            animi debitis.</span>
+          <h3 className='text-h6 text-start md:max-w-[250px]'>
+            {t('benefits.aboutDesc')}
+            <br />
+            <br />
+            <span className=''>{t('benefits.aboutDesc2')}</span>
           </h3>
         </div>
         <div
@@ -82,22 +81,15 @@ const Benefits = () => {
         </div>
         <div
           id='animation'
-          className=' px-4 md:px-0 md:col-span-5 col-span-full flex flex-col justify-start gap-4 items-end text-end'>
+          className=' px-4 md:px-0 md:col-span-5 col-span-full flex flex-col justify-start gap-2 items-end text-end'>
           <div className='flex  gap-2 '>
-            <h3 className='text-h3 text-start'>En nuestro estudio</h3>
+            <h3 className='text-h3 text-start '>{t('benefits.inOurStudio')}</h3>
             <div className='h-2 w-2 bg-secondary rounded-full self-center'>
               {' '}
             </div>
           </div>
-          <p className='text-body   text-end md:max-w-[80%]'>
-            La capacitación, actualización permanente y solvencia profesional
-            son los pilares de nuestro trabajo.
-            <br /><br />
-            <span className='text-black/25'>Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Autem, impedit atque? Iste, earum
-            accusantium quidem, voluptatem, placeat similique eius recusandae
-            perferendis dolore obcaecati possimus? Voluptatum, eos eveniet. Cum,
-            animi debitis.</span>
+          <p className='text-body   text-end md:max-w-[250px]'>
+            {t('benefits.inOurStudioDesc')}
           </p>
         </div>
       </div>

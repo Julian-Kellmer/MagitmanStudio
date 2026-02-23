@@ -1,0 +1,237 @@
+﻿[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+node.exe : 
+En línea: 1 Carácter: 
+1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\U
+sers\USUARIO\AppData\R
+oamin ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : 
+NotSpecified    : 
+(:String) [], Rem    
+oteException
+    + 
+FullyQualifiedErr    
+orId : NativeComman   
+ dError
+ 
+./fonts/Satoshi-Light.
+woff2 referenced in ./
+fonts/Satoshi-Light.wo
+ff2 didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Regula
+r.woff2 referenced in 
+./fonts/Satoshi-Regula
+r.woff2 didn't 
+resolve at build 
+time, it will remain 
+unchanged to be 
+resolved at runtime
+
+./fonts/Satoshi-Medium
+.woff2 referenced in .
+/fonts/Satoshi-Medium.
+woff2 didn't resolve 
+at build time, it 
+will remain unchanged 
+to be resolved at 
+runtime
+
+./fonts/Satoshi-Bold.w
+off2 referenced in ./f
+onts/Satoshi-Bold.woff
+2 didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Black.
+woff2 referenced in ./
+fonts/Satoshi-Black.wo
+ff2 didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-black.wo
+ff2 referenced in ./fo
+nts/inter-black.woff2 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-ExtraBol
+d.woff2 referenced in 
+./fonts/inter-ExtraBol
+d.woff2 didn't 
+resolve at build 
+time, it will remain 
+unchanged to be 
+resolved at runtime
+
+./fonts/inter-bold.wof
+f2 referenced in ./fon
+ts/inter-bold.woff2 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-SemiBold
+.woff2 referenced in .
+/fonts/inter-SemiBold.
+woff2 didn't resolve 
+at build time, it 
+will remain unchanged 
+to be resolved at 
+runtime
+
+./fonts/inter-Medium.w
+off2 referenced in ./f
+onts/inter-Medium.woff
+2 didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-Regular.
+woff2 referenced in ./
+fonts/inter-Regular.wo
+ff2 didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-Light.wo
+ff2 referenced in ./fo
+nts/inter-Light.woff2 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/inter-ExtraLig
+ht.woff2 referenced 
+in ./fonts/inter-Extra
+Light.woff2 didn't 
+resolve at build 
+time, it will remain 
+unchanged to be 
+resolved at runtime
+
+./fonts/inter-Thin.wof
+f2 referenced in ./fon
+ts/inter-Thin.woff2 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Light.
+woff referenced in ./f
+onts/Satoshi-Light.wof
+f didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Regula
+r.woff referenced in .
+/fonts/Satoshi-Regular
+.woff didn't resolve 
+at build time, it 
+will remain unchanged 
+to be resolved at 
+runtime
+
+./fonts/Satoshi-Medium
+.woff referenced in ./
+fonts/Satoshi-Medium.w
+off didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Bold.w
+off referenced in ./fo
+nts/Satoshi-Bold.woff 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Black.
+woff referenced in ./f
+onts/Satoshi-Black.wof
+f didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Light.
+ttf referenced in ./fo
+nts/Satoshi-Light.ttf 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Regula
+r.ttf referenced in ./
+fonts/Satoshi-Regular.
+ttf didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Medium
+.ttf referenced in ./f
+onts/Satoshi-Medium.tt
+f didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Bold.t
+tf referenced in ./fon
+ts/Satoshi-Bold.ttf 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+
+./fonts/Satoshi-Black.
+ttf referenced in ./fo
+nts/Satoshi-Black.ttf 
+didn't resolve at 
+build time, it will 
+remain unchanged to 
+be resolved at runtime
+[32mÔ£ô[39m 105 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                   [39m[1m[2m  0.50 kB[22m[1m[22m[2m Ôöé gzip:   0.31 kB[22m
+[2mdist/[22m[35massets/index-D3wZxH9j.css    [39m[1m[2m 40.35 kB[22m[1m[22m[2m Ôöé gzip:   7.73 kB[22m
+[2mdist/[22m[36massets/common-Bu8DFylh.js    [39m[1m[2m  0.56 kB[22m[1m[22m[2m Ôöé gzip:   0.37 kB[22m
+[2mdist/[22m[36massets/common-CW9chwp-.js    [39m[1m[2m  0.60 kB[22m[1m[22m[2m Ôöé gzip:   0.40 kB[22m
+[2mdist/[22m[36massets/contact-y24K4AKq.js   [39m[1m[2m  0.81 kB[22m[1m[22m[2m Ôöé gzip:   0.43 kB[22m
+[2mdist/[22m[36massets/contact-Cyt3HGiY.js   [39m[1m[2m  0.90 kB[22m[1m[22m[2m Ôöé gzip:   0.48 kB[22m
+[2mdist/[22m[36massets/about-IB65DLgJ.js     [39m[1m[2m  2.44 kB[22m[1m[22m[2m Ôöé gzip:   1.13 kB[22m
+[2mdist/[22m[36massets/about-DSAc14XU.js     [39m[1m[2m  2.72 kB[22m[1m[22m[2m Ôöé gzip:   1.27 kB[22m
+[2mdist/[22m[36massets/home-D6vkl6kV.js      [39m[1m[2m  3.85 kB[22m[1m[22m[2m Ôöé gzip:   1.52 kB[22m
+[2mdist/[22m[36massets/home-Dgxggfy7.js      [39m[1m[2m  4.14 kB[22m[1m[22m[2m Ôöé gzip:   1.66 kB[22m
+[2mdist/[22m[36massets/services-CCgUFVtn.js  [39m[1m[2m  5.43 kB[22m[1m[22m[2m Ôöé gzip:   1.81 kB[22m
+[2mdist/[22m[36massets/services-B8KKhxk-.js  [39m[1m[2m  6.04 kB[22m[1m[22m[2m Ôöé gzip:   1.97 kB[22m
+[2mdist/[22m[36massets/index-BFp7uzQL.js     [39m[1m[2m440.69 kB[22m[1m[22m[2m Ôöé gzip: 146.95 kB[22m
+[32mÔ£ô built in 6.26s[39m

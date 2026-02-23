@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import BrandsMarquee from '../../components/BrandsMarqee'
 import WaveText from '../../components/TextWave'
 import Button from '../../components/Button'
+import { useTranslation } from '../../i18n/context.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,19 +25,19 @@ const brands = [
     url: 'https://www.argentina.gob.ar/bienesdelestado',
   },
   {
-    name: 'Legislatura',
+    name: 'Aspirus',
     image: '/clientes/Capa4.png',
+    url: 'https://www.aspirus.org/',
+  },
+  {
+    name: 'Legislatura',
+    image: '/clientes/Capa5.png',
     url: 'https://www.legislatura.gob.ar/',
   },
   {
-    name: 'Dist Beatriz',
-    image: '/clientes/Capa5.png',
-    url: 'https://distbeatriz.com.ar/',
-  },
-  {
-    name: 'Brand 5',
+    name: 'Dist Beatriz Comsticos',
     image: '/clientes/Capa6.png',
-    url: 'https://www.kopelco.com.ar/',
+    url: 'https://distbeatriz.com.ar/',
   },
   {
     name: 'Buenos Aires Import',
@@ -49,69 +50,109 @@ const brands = [
     url: 'https://leonvegano.com.ar/',
   },
   {
-    name: 'Zoologic',
+    name: 'Neo Logistic',
     image: '/clientes/Capa9.png',
-    url: 'https://www.zoologic.com.ar/',
+    url: 'http://neo-logistics.net/en/',
   },
   {
-    name: 'Limud BA',
+    name: 'ZooLogic',
     image: '/clientes/Capa10.png',
-    url: 'https://limudba.org/nosotros/',
+    url: 'https://www.zoologic.com.ar/',
   },
 
   {
-    name: 'Universidad de Buenos Aires',
+    name: 'Cyber 42',
     image: '/clientes/Capa11.png',
+    url: 'https://www.sans.org/cybersecurity-focus-areas/leadership/cyber42',
+  },
+  {
+    name: 'Limud BA',
+    image: '/clientes/Capa12.png',
+    url: 'https://limudba.org/',
+  },
+  {
+    name: 'Universidad de Buenos Aires',
+    image: '/clientes/Capa13.png',
     url: 'https://www.ub.edu.ar/',
   },
   {
     name: 'Watson Levy',
-    image: '/clientes/Capa12.png',
-    url: 'https://watsonlevy.com/',
+    image: '/clientes/Capa14.png',
+    url: 'https://watsonlevy.com/es',
   },
   {
     name: 'Netting SA',
-    image: '/clientes/Capa13.png',
+    image: '/clientes/Capa15.png',
     url: 'https://www.nettingsa.com.ar/',
   },
   {
-    name: 'Secretaria de Industria y Desarrollo Productivo',
-    image: '/clientes/Capa14.png',
-    url: 'https://www.argentina.gob.ar/produccion/secretaria-de-industria-y-desarrollo-productivo-autoridades',
+    name: 'Ministerio de Desarrollo Económico y Producción',
+    image: '/clientes/Capa16.png',
+    url: 'https://buenosaires.gob.ar/gcaba_historico/desarrolloeconomico/institucional-ministerio-de-desarrollo-economico',
   },
   {
-    name: 'UBAtec',
-    image: '/clientes/Capa15.png',
+    name: 'Ubatec',
+    image: '/clientes/Capa17.png',
     url: 'https://www.ubatec.uba.ar/',
   },
   {
     name: 'The Mind Co',
-    image: '/clientes/Capa16.png',
+    image: '/clientes/Capa18.png',
     url: 'https://www.themindco.com/',
   },
   {
-    name: 'Altman',
-    image: '/clientes/Capa17.png',
-    url: 'http://www.altman.com.ar/',
-  },
-  {
     name: 'William Hill',
-    image: '/clientes/Capa18.png',
+    image: '/clientes/Capa21.png',
     url: 'https://www.williamhill.com/',
   },
   {
-    name: 'Brand 5',
-    image: '/clientes/Capa21.png',
-    url: 'https://www.kopelco.com.ar/',
+    name: 'Altman',
+    image: '/clientes/Capa20.png',
+    url: 'https://altman.com.ar/',
   },
   {
-    name: 'Brand 5',
-    image: '/clientes/Capa20.png',
-    url: 'https://www.kopelco.com.ar/',
+    name: 'cloudesafe',
+    image: '/clientes/CloudHesive.jpg',
+    url: 'https://www.cloudhesive.com/es/',
+  },
+  {
+    name: 'Geoconsult',
+    image: '/clientes/Geoconsult.png',
+    url: 'https://geoconsultsrl.com.ar/',
+  },
+  {
+    name: 'Laboratorio Eta',
+    image: '/clientes/laboratoriosEta.png',
+    url: 'https://info814389.wixsite.com/laboratorioeta',
+  },
+  {
+    name: 'Perramus',
+    image: '/clientes/Perramus.png',
+    url: 'https://www.perramus.com.ar/',
+  },
+  {
+    name: 'Pampero',
+    image: '/clientes/Pampero.png',
+    url: 'https://pampero.com.ar/',
+  },
+  {
+    name: 'pehuen consulting',
+    image: '/clientes/PehuenConsulting.png',
+    url: 'https://www.cuitonline.com/detalle/30710206607/pehuen-consulting-s.r.l.html',
+  },
+  {
+    name: 'PsicoMgmnt',
+    image: '/clientes/PsicoMgmnt.png',
+    url: 'https://psicologiaymanagement.com/',
+  },
+  {
+    name: 'Vista Sur Films',
+    image: '/clientes/VistaSurFilms.png',
+    url: 'https://vistasurfilms.com.ar/',
   },
 ]
 
-const BrandsModal = ({ isOpen, onClose, allBrands }) => {
+const BrandsModal = ({ isOpen, onClose, allBrands, t }) => {
   if (!isOpen) return null
 
   return (
@@ -120,11 +161,11 @@ const BrandsModal = ({ isOpen, onClose, allBrands }) => {
         className='bg-white rounded-2xl w-full max-w-5xl max-h-[85vh] overflow-hidden flex flex-col shadow-2xl animate-fade-in relative'
         onClick={(e) => e.stopPropagation()}>
         <div className='p-6 border-b border-black/5 flex justify-between items-center bg-white sticky top-0 z-10'>
-          <h3 className='text-h5 text-primary'>Nuestros Clientes</h3>
+          <h3 className='text-h5 text-primary'>{t('trustUs.modalTitle')}</h3>
           <button
             onClick={onClose}
             className='p-2 hover:bg-black/5 rounded-full transition-colors'
-            aria-label='Cerrar modal'>
+            aria-label={t('trustUs.closeModal')}>
             <svg
               width='24'
               height='24'
@@ -177,6 +218,7 @@ const TrustUs = () => {
   const containerRef = useRef(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const allBrands = [...brands]
+  const { t } = useTranslation('home')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -252,13 +294,9 @@ const TrustUs = () => {
                 className='flex items-center justify-center
                gap-2 '>
                 {/* <div className='h-2 w-2 bg-secondary rounded-full text-center'> </div> */}
-                <p className='text-h3 '> Empresas que confían en nosotros </p>
+                <p className='text-h3 '> {t('trustUs.title')} </p>
               </div>
-              <h3 className='text-h6 text-center'>
-                Acompañamos a las empresas en el desarrollo de sus negocios,
-                otorgándoles conocimiento especializado y respaldo en la toma de
-                decisiones.
-              </h3>
+              <h3 className='text-h6 text-center'>{t('trustUs.subtitle')}</h3>
             </div>
           </div>
 
@@ -317,7 +355,7 @@ const TrustUs = () => {
             <Button
               onClick={() => setIsModalOpen(true)}
               className='bg-secondary text-white hover:bg-secondary/80 hover:text-white border border-secondary transition-all duration-300'>
-              Ver todos Nuestros Clientes
+              {t('trustUs.viewClients')}
             </Button>
           </div>
 
@@ -325,6 +363,7 @@ const TrustUs = () => {
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             allBrands={allBrands}
+            t={t}
           />
         </div>
       </section>

@@ -5,6 +5,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './home'
 import Nosotros from './nosotros'
 import Servicios from './servicios'
+import Contacto from './contacto'
 import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
 import { ReactLenis } from './components/ReactLenis'
@@ -47,6 +48,10 @@ function App() {
           <Route
             path='/servicios'
             element={<Servicios />}
+          />
+          <Route
+            path='/contacto'
+            element={<Contacto />}
           />
         </Routes>
         <Footer />

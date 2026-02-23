@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
+import { useTranslation } from '../i18n/context.jsx'
 
 const Header = () => {
+  const { t, lang, setLang } = useTranslation('common')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   // Initialize theme from localStorage or default using lazy initialization
@@ -55,21 +57,26 @@ const Header = () => {
         }`}>
         {/* Mobile: Hamburger Button */}
         {/* Desktop Left: Navigation */}
-        <nav className='hidden md:flex space-x-6'>
+        <nav className='hidden md:flex space-x-6 flex-1'>
           <Link
             to='/'
             className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
-            Inicio
+            {t('nav.home')}
           </Link>
           <Link
             to='/servicios'
             className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
-            Servicios
+            {t('nav.services')}
           </Link>
           <Link
             to='/nosotros'
             className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
-            Nosotros
+            {t('nav.about')}
+          </Link>
+          <Link
+            to='/contacto'
+            className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
+            {t('nav.contact')}
           </Link>
         </nav>
         {/* Center: Logo (Adjusted for mobile to be centered properly) */}
@@ -87,94 +94,20 @@ const Header = () => {
           </Link>
         </div>
         {/* Desktop Right: Language & Contact & Theme Toggle */}
-        <div className='hidden md:flex items-center space-x-4'>
+        <div className='hidden md:flex items-center space-x-4 flex-1 justify-end'>
           {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className='w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/5 transition-colors'
-            title={
-              theme === 'mode-1' ? 'Switch to Mode 2' : 'Switch to Mode 1'
-            }>
-            {theme === 'mode-1' ? (
-              /* Moon Icon (Default Mode is considered "Darker" or Standard) */
-              <svg
-                width='20'
-                height='20'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='text-secondary'>
-                <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
-              </svg>
-            ) : (
-              /* Sun Icon (Light Mode) */
-              <svg
-                width='20'
-                height='20'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='text-secondary'>
-                <circle
-                  cx='12'
-                  cy='12'
-                  r='5'></circle>
-                <line
-                  x1='12'
-                  y1='1'
-                  x2='12'
-                  y2='3'></line>
-                <line
-                  x1='12'
-                  y1='21'
-                  x2='12'
-                  y2='23'></line>
-                <line
-                  x1='4.22'
-                  y1='4.22'
-                  x2='5.64'
-                  y2='5.64'></line>
-                <line
-                  x1='18.36'
-                  y1='18.36'
-                  x2='19.78'
-                  y2='19.78'></line>
-                <line
-                  x1='1'
-                  y1='12'
-                  x2='3'
-                  y2='12'></line>
-                <line
-                  x1='21'
-                  y1='12'
-                  x2='23'
-                  y2='12'></line>
-                <line
-                  x1='4.22'
-                  y1='19.78'
-                  x2='5.64'
-                  y2='18.36'></line>
-                <line
-                  x1='18.36'
-                  y1='5.64'
-                  x2='19.78'
-                  y2='4.22'></line>
-              </svg>
-            )}
-          </button>
 
-          <button className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
-            ES / EN
+          <button
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            aria-label='Switch language'
+            className='text-[var(--text-color)] hover:text-secondary font-medium transition-colors'>
+            {t('nav.langSwitch')}
           </button>
-          <Button className='bg-secondary text-white hover:opacity-90'>
-            Contactanos
-          </Button>
+          <Link to='/contacto'>
+            <Button className='bg-secondary text-white hover:opacity-90'>
+              {t('nav.contactUs')}
+            </Button>
+          </Link>
         </div>
         {/* Mobile Right: Placeholder or Language (optional, kept clean for now as per "make it valid for mobile") */}
         <div className='md:hidden w-8'></div> {/* Spacer to balance burger */}
@@ -208,19 +141,25 @@ const Header = () => {
             to='/'
             className='text-white/90 font-light text-h2 hover:text-white transition-colors duration-200'
             onClick={toggleMenu}>
-            Inicio
+            {t('nav.home')}
           </Link>
           <Link
             to='/servicios'
             className='text-white/90 font-light text-h2 hover:text-white transition-colors duration-200'
             onClick={toggleMenu}>
-            Servicios
+            {t('nav.services')}
           </Link>
           <Link
             to='/nosotros'
             className='text-white/90 font-light text-h2 hover:text-white transition-colors duration-200'
             onClick={toggleMenu}>
-            Acerca de nosotros
+            {t('nav.about')}
+          </Link>
+          <Link
+            to='/contacto'
+            className='text-white/90 font-light text-h2 hover:text-white transition-colors duration-200'
+            onClick={toggleMenu}>
+            {t('nav.contact')}
           </Link>
         </nav>
 
@@ -230,7 +169,9 @@ const Header = () => {
           <button
             onClick={toggleTheme}
             className='flex items-center gap-2 text-white/70 hover:text-white transition-colors'>
-            {theme === 'mode-1' ? 'Modo Original' : 'Modo Alternativo'}
+            {theme === 'mode-1'
+              ? t('header.themeOriginal')
+              : t('header.themeAlternative')}
             {theme === 'mode-1' ? (
               <svg
                 width='20'
@@ -301,12 +242,19 @@ const Header = () => {
             )}
           </button>
 
-          <button className='text-white/70 font-light text-sm hover:text-white transition-colors duration-200'>
-            ES / EN
+          <button
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            aria-label='Switch language'
+            className='text-white/70 font-light text-sm hover:text-white transition-colors duration-200'>
+            {t('nav.langSwitch')}
           </button>
-          <Button className='bg-white text-primary hover:bg-white/90 transition-all duration-200'>
-            Contactanos
-          </Button>
+          <Link
+            to='/contacto'
+            onClick={toggleMenu}>
+            <Button className='bg-white text-primary hover:bg-white/90 transition-all duration-200'>
+              {t('nav.contactUs')}
+            </Button>
+          </Link>
         </div>
       </div>
     </>

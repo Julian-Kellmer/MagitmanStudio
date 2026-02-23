@@ -2,6 +2,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../../components/Button'
 import React from 'react'
+import { useTranslation } from '../../i18n/context.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -94,29 +95,6 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const benefits = [
-  {
-    icon: <UserIcon />,
-    title: 'Atencion personalizada',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
-  },
-  {
-    icon: <ChartIcon />,
-    title: 'Experiencia y trayectoria comprobada',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
-  },
-  {
-    icon: <BookIcon />,
-    title: 'Cumplimiento y tranquilidad',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
-  },
-  {
-    icon: <BellIcon />,
-    title: 'Acompañamiento constante',
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
-  },
-]
-
 const BenefitCard = ({ icon, title, description }) => {
   return (
     <div className='flex flex-col justify-start items-center p-4 min-h-[300px] w-full gap-6 text-center group'>
@@ -140,6 +118,31 @@ const BenefitCard = ({ icon, title, description }) => {
 }
 
 const About = () => {
+  const { t } = useTranslation('home')
+
+  const benefits = [
+    {
+      icon: <UserIcon />,
+      title: t('about.card1Title'),
+      description: t('about.card1Desc'),
+    },
+    {
+      icon: <ChartIcon />,
+      title: t('about.card2Title'),
+      description: t('about.card2Desc'),
+    },
+    {
+      icon: <BookIcon />,
+      title: t('about.card3Title'),
+      description: t('about.card3Desc'),
+    },
+    {
+      icon: <BellIcon />,
+      title: t('about.card4Title'),
+      description: t('about.card4Desc'),
+    },
+  ]
+
   return (
     <section className='layout-wrap md:py-12 min-h-[80vh] md:my-0 bg-bg-about py-16 md:px-0 px-4 flex flex-col justify-center transition-colors duration-500'>
       <div className='layout-grid col-span-full items-center gap-y-16'>
@@ -147,13 +150,10 @@ const About = () => {
         <div className='col-span-full layout-grid px-4'>
           <div className='col-span-12 flex flex-col items-center text-center gap-6 animate-header'>
             <h2 className='text-h2 text-text-about text-center transition-colors duration-500'>
-              Beneficios de trabajar con 
-              Estudio Maguitman
+              {t('about.title')} {t('about.titleStudio')}
             </h2>
             <p className='text-h6 text-text-about/80 md:max-w-[60%] transition-colors duration-500'>
-              Trabajamos de manera personalizada. Analizamos, asesoramos y
-              buscamos mejoras reales y ahorros impositivos que acompañen el
-              crecimiento de cada negocio.
+              {t('about.subtitle')}
             </p>
           </div>
         </div>

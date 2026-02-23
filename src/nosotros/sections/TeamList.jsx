@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from '../../i18n/context.jsx'
 // import { ChevronIcon } from '../../components/icons/ChevronIcon'
 
 const ArrowIcon = () => (
@@ -18,150 +19,16 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const teamMembers = [
-  {
-    id: 1,
-    name: 'Karina Maguitman',
-    role: 'Contadora Publica, Líder de Estudio Maguitman',
-    image: '/KarinaMaguitman.jpg',
+// Team member data moved into TeamList component for i18n support
 
-    linkedin: 'https://www.linkedin.com/in/karina-maguitman-74872b25/',
-  },
-  {
-    id: 2,
-    name: 'Gustavo Warcevitzky',
-    role: 'Contador Publico, Líder de Estudio Maguitman',
-    image: '/GustavoWarcevitzky.jpg',
-    linkedin: 'https://www.linkedin.com/in/gustavo-warcevitzky-74a62a350/',
-  },
-  {
-    id: 3,
-    name: 'Ereidis Chacon',
-    role: 'Contadora Publica',
-    image: '/EreidisChacon.jpg',
-    linkedin: 'https://www.linkedin.com/in/ereidis-chacon-454ba9123/',
-  },
-  {
-    id: 4,
-    name: 'Luis Villarreal',
-    role: 'Contador Publico',
-    image: '/LuisVillarreal.jpg',
-    linkedin: 'https://www.linkedin.com/in/luis-villarreal-44137210a/',
-  },
-  {
-    id: 5,
-    name: 'Maria Fernanda Romero',
-    role: 'Contadora Publica',
-    image: '/MariaFernandaRomero.jpg',
-    linkedin: '#',
-  },
-  {
-    id: 6,
-    name: 'Natalia Bratanich',
-    role: 'Contadora Publica',
-    image: '/NataliaBratanich.jpg',
-    linkedin: 'https://www.linkedin.com/in/natalia-bratanich-70049717/',
-  },
-  {
-    id: 7,
-    name: 'Nataly Flores',
-    role: '',
-    image: '/NatalyFlores.jpg',
-    linkedin: '#',
-  },
-  {
-    id: 8,
-    name: 'Sofia Gonza',
-    role: 'Contadora Publica',
-    image: '/SofiaGonza.jpg',
-    linkedin: '#',
-  },
-]
-
-const associates = [
-  {
-    id: 101,
-    name: 'Sandra Diaz',
-    role: 'Contadora Publica - Especialista en Precios de Transferencia',
-    image: '/SandraDiaz.png',
-    linkedin: '#',
-    web: 'https://www.sdiaz-tax.com',
-    servicios: [
-      'Estudios de Precios de Transferencia',
-      'Preparación Informe Maestro',
-      'Reporte País por País',
-      'Acuerdos de Contribución de Costos',
-      'Centro de Servicios Compartidos',
-      'Planificación Fiscal Internacional',
-      'Acuerdos Anticipados de Precios',
-      'Transacciones con Intangibles',
-      'Benchmarking para relocalización de funciones',
-    ],
-  },
-  {
-    id: 102,
-    name: 'Ximena Parellada',
-    role: 'Abogada Especialista en Asesoría Jurídica de Empresas',
-    image: '/PARELLADAXXimena.png',
-    linkedin: '#',
-    web: 'https://www.sdiaz-tax.com',
-    servicios: [
-      'Asesoramiento en materia societaria',
-      ' contractual y sucesoria.',
-      'Transacciones nacionales e internacionales.',
-      'Fusiones, escisiones, transformaciones y reorganizaciones societarias.',
-      'Procesos de debida diligencia legal.',
-      'Representación de accionistas extranjeros.',
-      'Participación en Directorios.',
-      'Asociaciones Civiles y Fundaciones.',
-      'Inscripciones registrales societarias.',
-    ],
-  },
-  {
-    id: 103,
-    name: 'Facundo Giampaoli',
-    role: 'Abogado',
-    image: 'GIAMPAOLIFacundo.jpeg',
-    linkedin: '#',
-    web: 'https://www.sdiaz-tax.com',
-    servicios: [
-      'Relaciones individuales de Derecho del Trabajo.',
-      'Accidentes y enfermedades laborales.',
-      'Accidentes y enfermedades de naturaleza inculpables.',
-      'Asesoramiento respecto de inspecciones y sanciones administrativas.',
-      'Contratos modales.',
-      'Seguimiento de expedientes administrativos y judiciales (Poder Judicial de la Nación, Poder Judicial de la Prov. de Buenos Aires, Poder Judicial de C.A.B.A.)',
-    ],
-  },
-  {
-    id: 104,
-    name: 'Casandra Alberto',
-    role: 'Contadora Publica, Payrroll, servicios labores y previsionales',
-    image: '/CasandraAlberto.jpeg',
-    linkedin: '#',
-    web: 'https://www.sdiaz-tax.com',
-    servicios: [
-      'Liquidación de nómina',
-      'Emisión de recibos de sueldo con firma electrónica y  digital tanto por empleador como por empleado, cumpliendo estándares y marco normativo definidos para documentos PDF.',
-      'Gestión digital de toda la documentación laboral de cada empleado desde su ingreso.',
-      'Cálculo de retención de impuesto a las ganancias',
-      'Confección y presentación de cargas sociales F.931, libro de Sueldos Digital (ARCA) y boletas sindicales',
-      'Altas y bajas en ARCA',
-      'Certificación de servicios',
-      'Generación del libro de sueldos digital.',
-      'Confección de asientos contables de sueldos',
-      'Atención de inspecciones y/o contestación de requerimientos de organismos de control',
-      'Atención de consultas, previsionales y laborales relacionadas con la operatoria normal de liquidación de sueldos',
-    ],
-  },
-]
+// Associates data moved into TeamList component for i18n support
 
 const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
   const hasServices = member.servicios && member.servicios.length > 0
 
   return (
     <div
-      className={`border-b border-primary/20 py-6 col-span-full md:col-span-1 ${hasServices ? 'cursor-pointer group' : ''}`}
+      className={`border-t border-primary/20 py-6 col-span-full md:col-span-1 ${hasServices ? 'cursor-pointer group' : ''}`}
       onClick={() => hasServices && toggleOpen(member.id)}>
       <div className='flex flex-col gap-4'>
         {/* Header Row */}
@@ -257,6 +124,99 @@ const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
 
 const TeamList = () => {
   const [openMemberId, setOpenMemberId] = useState(null)
+  const { t } = useTranslation('about')
+
+  const teamMembers = [
+    {
+      id: 1,
+      name: 'Karina Maguitman',
+      role: t('roles.cpaLeader'),
+      image: '/KarinaMaguitman.jpg',
+      linkedin: 'https://www.linkedin.com/in/karina-maguitman-74872b25/',
+    },
+    {
+      id: 2,
+      name: 'Gustavo Warcevitzky',
+      role: t('roles.cpaLeaderM'),
+      image: '/GustavoWarcevitzky.jpg',
+      linkedin: 'https://www.linkedin.com/in/gustavo-warcevitzky-74a62a350/',
+    },
+    {
+      id: 3,
+      name: 'Ereidis Chacon',
+      role: t('roles.cpa'),
+      image: '/EreidisChacon.jpg',
+    },
+    {
+      id: 4,
+      name: 'Luis Villarreal',
+      role: t('roles.cpaM'),
+      image: '/LuisVillarreal.jpg',
+    },
+    {
+      id: 5,
+      name: 'Maria Fernanda Romero',
+      role: t('roles.cpa'),
+      image: '/MariaFernandaRomero.jpg',
+    },
+    {
+      id: 6,
+      name: 'Natalia Bratanich',
+      role: t('roles.cpa'),
+      image: '/NataliaBratanich.jpg',
+    },
+    {
+      id: 7,
+      name: 'Nataly Flores',
+      role: '',
+      image: '/NatalyFlores.jpg',
+    },
+    {
+      id: 8,
+      name: 'Sofia Gonza',
+      role: t('roles.cpa'),
+      image: '/SofiaGonza.jpg',
+    },
+  ]
+
+  const associates = [
+    {
+      id: 101,
+      name: 'Sandra Diaz',
+      role: t('roles.tpSpecialist'),
+      image: '/SandraDiaz.png',
+      linkedin: '#',
+      web: 'https://www.sdiaz-tax.com',
+      servicios: t('sandraServices'),
+    },
+    {
+      id: 102,
+      name: 'Ximena Parellada',
+      role: t('roles.corporateLawyer'),
+      image: '/PARELLADAXXimena.png',
+      linkedin: '#',
+      web: 'https://www.linkedin.com/in/ximenaparellada/',
+      servicios: t('ximenaServices'),
+    },
+    {
+      id: 103,
+      name: 'Facundo Giampaoli',
+      role: t('roles.lawyer'),
+      image: 'GIAMPAOLIFacundo.jpeg',
+      linkedin: '#',
+      web: 'https://www.linkedin.com/in/facundo-martin-giampaoli-432906a8/',
+      servicios: t('facundoServices'),
+    },
+    {
+      id: 104,
+      name: 'Casandra Alberto',
+      role: t('roles.payrollSpecialist'),
+      image: '/CasandraAlberto.jpeg',
+      linkedin: '#',
+      web: 'https://www.cyaasociados.com.ar',
+      servicios: t('casandraServices'),
+    },
+  ]
 
   const toggleMember = (id) => {
     setOpenMemberId(openMemberId === id ? null : id)
@@ -270,7 +230,7 @@ const TeamList = () => {
         <div className='col-span-full layout-grid '>
           <div className='col-span-full mb-24'>
             <h1 className='text-h2 text-primary font-medium leading-tight mb-8'>
-              Nuestro Equipo
+              {t('teamTitle')}
             </h1>
             <div className='grid md:grid-cols-2 gap-x-12 gap-y-6'>
               {teamMembers.map((member) => (
@@ -289,7 +249,7 @@ const TeamList = () => {
         <div className='col-span-full layout-grid'>
           <div className='col-span-full mt-12'>
             <h3 className='text-h3 font-medium mb-8 text-left text-primary '>
-              Asociados Profesionales
+              {t('associatesTitle')}
             </h3>
             <div className='grid md:grid-cols-2 gap-x-12 gap-y-6 w-full'>
               {associates.map((assoc) => (

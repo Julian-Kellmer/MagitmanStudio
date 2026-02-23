@@ -35,6 +35,10 @@
 .animate-marquee-fast {
   animation: marquee 10s linear infinite;
 }
+.animate-marquee-fast,
+.animate-marquee-fast * {
+  transition-property: none !important;
+}
 .animate-marquee-slow {
   animation: marquee 500s linear infinite;
 }

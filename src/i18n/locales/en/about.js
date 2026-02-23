@@ -1,0 +1,63 @@
+export default {
+  heroTitle: 'Who we are',
+  heroDesc:
+    'Our team closely accompanies each client, understanding their needs and challenges. We maintain a level of excellence in line with an increasingly competitive market.',
+
+  teamTitle: 'Our Team',
+  associatesTitle: 'Associated Professionals',
+
+  roles: {
+    cpa: 'Certified Public Accountant',
+    cpaM: 'Certified Public Accountant',
+    cpaLeader: 'Certified Public Accountant, Leader of Estudio Maguitman',
+    cpaLeaderM: 'Certified Public Accountant, Leader of Estudio Maguitman',
+    tpSpecialist: 'CPA - Transfer Pricing Specialist',
+    corporateLawyer: 'Lawyer - Corporate Legal Advisory Specialist',
+    lawyer: 'Lawyer',
+    payrollSpecialist: 'CPA, Payroll, labor and social security services',
+  },
+
+  sandraServices: [
+    'Transfer Pricing Studies',
+    'Master File Preparation',
+    'Country-by-Country Reporting',
+    'Cost Sharing Agreements',
+    'Shared Services Center',
+    'International Tax Planning',
+    'Advance Pricing Agreements',
+    'Intangible Transactions',
+    'Benchmarking for function relocation',
+  ],
+  ximenaServices: [
+    'Corporate advisory',
+    ' contractual and succession matters.',
+    'National and international transactions.',
+    'Mergers, spin-offs, transformations and corporate reorganizations.',
+    'Legal due diligence processes.',
+    'Representation of foreign shareholders.',
+    'Board participation.',
+    'Civil Associations and Foundations.',
+    'Corporate registry filings.',
+  ],
+  facundoServices: [
+    'Individual labor law relations.',
+    'Occupational accidents and diseases.',
+    'Non-work-related accidents and illnesses.',
+    'Advisory on inspections and administrative sanctions.',
+    'Term-based contracts.',
+    'Monitoring of administrative and judicial proceedings (National Courts, Buenos Aires Province Courts, Buenos Aires City Courts)',
+  ],
+  casandraServices: [
+    'Payroll processing',
+    'Issuance of pay slips with electronic and digital signatures by both employer and employee, complying with standards and regulatory framework for PDF documents.',
+    'Digital management of all labor documentation for each employee from onboarding.',
+    'Income tax withholding calculation',
+    'Preparation and filing of social security contributions F.931, Digital Payroll Book (ARCA) and union payments',
+    'Registration and deregistration with ARCA',
+    'Service certification',
+    'Digital payroll book generation.',
+    'Payroll accounting entries preparation',
+    'Handling inspections and/or responding to requirements from regulatory agencies',
+    'Handling social security and labor inquiries related to normal payroll processing operations',
+  ],
+}

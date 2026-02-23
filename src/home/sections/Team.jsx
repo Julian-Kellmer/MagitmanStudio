@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../../components/Button'
+import { useTranslation } from '../../i18n/context.jsx'
 
 const ArrowIcon = () => (
   <svg
@@ -21,6 +22,7 @@ const ArrowIcon = () => (
 
 const Team = () => {
   const [showMoreKarina, setShowMoreKarina] = useState(false)
+  const { t } = useTranslation('home')
   return (
     <section
       className='layout-wrap py-8 md:py-16 md:px-0 px-4 transition-[background] duration-500'
@@ -29,11 +31,11 @@ const Team = () => {
       <div className='layout-grid col-span-full md:mb-24 mb-12'>
         <div className='md:col-span-10 col-span-full md:col-start-2 flex flex-col items-start gap-4 border-l border-black/10 pl-8'>
           <h2 className='text-text-team-title text-h2 leading-none font-medium transition-colors duration-500'>
-            Equipo Estudio Maguitman & ASOC
+            {t('team.title')}
           </h2>
           <Link to='/nosotros'>
             <Button className='flex items-center gap-2 text-secondary hover:opacity-80 !p-0 font-medium border-b border-secondary rounded-none pb-1 w-fit mt-4'>
-              Conoce mas <ArrowIcon />
+              {t('team.knowMore')} <ArrowIcon />
             </Button>
           </Link>
         </div>
@@ -59,7 +61,9 @@ const Team = () => {
               <h3 className='text-h4 font-medium'>Karina Maguitman</h3>
               <div className='flex gap-2 ml-2'>
                 <a
-                  href='#'
+                  href='https://www.linkedin.com/in/karina-maguitman-74872b25/'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='hover:opacity-70 transition-opacity'>
                   <img
                     src='/Linkedin.svg'
@@ -68,7 +72,7 @@ const Team = () => {
                   />
                 </a>
                 <a
-                  href='#'
+                  href='mailto:km@estudiomaguitman.com.ar'
                   className='hover:opacity-70 transition-opacity'>
                   <img
                     src='/Mail.svg'
@@ -79,62 +83,34 @@ const Team = () => {
               </div>
             </div>
             <p className='text-text-team-title text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
-              LIDER DEL ESTUDIO Maguitman
+              {t('team.leaderRole')}
             </p>
           </div>
 
           <div className='text-text-team-title flex flex-col gap-6 ml-7 text-body text-black/70'>
+            <p>{t('team.karina.bio1')}</p>
             <p>
-              Karina Maguitman es Contadora Pública egresada de la Facultad de
-              Ciencias Económicas de la Universidad de Buenos Aires y
-              Especialista en Derecho Tributario graduada en la Facultad de
-              Derecho y Ciencias Sociales de la Universidad de Buenos Aires.
-            </p>
-            <p>
-              Es asesora tributaria del Gobierno de la Ciudad Autónoma de Buenos
-              Aires desde el año 2008, desempeñándose en distintas reparticiones
-              del mismo. Asesora de empresas privadas nacionales y extranjeras
-              así como de empresas pertenecientes al Estado. <br />
+              {t('team.karina.bio2')} <br />
               {!showMoreKarina && (
                 <span
                   onClick={() => setShowMoreKarina(true)}
                   className=' text-secondary font-medium text-xs cursor-pointer border-b border-secondary hover:opacity-70 transition-opacity'>
-                  VER MAS
+                  {t('team.seeMore')}
                 </span>
               )}
             </p>
 
             {showMoreKarina && (
               <>
-                <p>
-                  Es profesora adjunta de las materias de Impuestos I e
-                  Impuestos II de la Universidad de Belgrano, en la carrera de
-                  Contador Público.
-                </p>
-                <p>
-                  Fue columnista del Diario "El Cronista" dentro de su
-                  Suplemento Impositivo y Previsional, a cargo de la columna
-                  mensual "Compilado de Dictámenes y Consultas" emitidos por la
-                  Administración Federal de Ingresos Públicos, ahora ARCA.
-                </p>
-                <p>
-                  Ha publicado trabajos relativos a la materia tributaria en
-                  distintos medios periodísticos y presentado trabajos escritos
-                  en diversos Congresos Nacionales.
-                </p>
-                <p>
-                  Miembro de la Comisión de Estudios Impositivos del Colegio de
-                  Graduados en Ciencias Económicas de la Ciudad Autónoma de
-                  Buenos Aires desde el año 2002.
-                </p>
-                <p>
-                  Se ha desempeñado como docente en Teoría y Técnica Impositiva
-                  II de la Universidad de Buenos Aires.
-                </p>
+                <p>{t('team.karina.bio3')}</p>
+                <p>{t('team.karina.bio4')}</p>
+                <p>{t('team.karina.bio5')}</p>
+                <p>{t('team.karina.bio6')}</p>
+                <p>{t('team.karina.bio7')}</p>
                 <span
                   onClick={() => setShowMoreKarina(false)}
                   className='text-black font-medium text-xs cursor-pointer border-b border-black hover:opacity-70 transition-opacity w-fit'>
-                  VER MENOS
+                  {t('team.seeLess')}
                 </span>
               </>
             )}
@@ -152,7 +128,9 @@ const Team = () => {
               <h3 className='text-h4 font-medium'>Gustavo Warcevitzky</h3>
               <div className='flex gap-2 ml-2'>
                 <a
-                  href='#'
+                  href='https://www.linkedin.com/in/gustavo-warcevitzky-74a62a350/'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='hover:opacity-70 transition-opacity'>
                   <img
                     src='/Linkedin.svg'
@@ -161,7 +139,7 @@ const Team = () => {
                   />
                 </a>
                 <a
-                  href='#'
+                  href='mailto:gw@estudiomaguitman.com.ar'
                   className='hover:opacity-70 transition-opacity'>
                   <img
                     src='/Mail.svg'
@@ -172,31 +150,22 @@ const Team = () => {
               </div>
             </div>
             <p className='text-sm uppercase tracking-wider text-black/50 font-medium ml-7'>
-              LIDER DEL ESTUDIO Maguitman
+              {t('team.leaderRole')}
             </p>
           </div>
 
           <div className='flex flex-col gap-6 ml-7 text-body text-black/70'>
+            <p>{t('team.gustavo.bio1')}</p>
+            <p>{t('team.gustavo.bio2')}</p>
             <p>
-              Contador Público, egresado de la Facultad de Ciencias Económicas
-              de la Universidad de Buenos Aires.
-            </p>
-            <p>
-              Cuenta con una amplia trayectoria en el gerenciamiento de empresas
-              PYME. Posee una sólida experiencia en la conducción y reingeniería
-              de procesos y circuitos administrativos.
-            </p>
-            <p>
-              Dentro de sus áreas de expertise se incluyen:
+              {t('team.gustavo.bio3')}
               <br />
-              Asesoramiento e implementación de sistemas de gestión
-              comercial/administrativo-contables.
-              <br />
-              Asesoramiento y elaboración de presupuestos económico-financieros.
-              <br />
-              Auditorías contables e impositivas.
-              <br />
-              Auditorías de gestión.
+              {t('team.gustavo.bio3Items')?.map?.((item, i) => (
+                <span key={i}>
+                  {item}
+                  <br />
+                </span>
+              ))}
             </p>
           </div>
         </div>
