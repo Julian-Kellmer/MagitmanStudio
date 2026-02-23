@@ -85,7 +85,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-8 md:gap-y-5'
+      className='w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-8 md:gap-y-5'
       noValidate>
       {/* Name — full row */}
       <div className='flex flex-col gap-1 md:col-span-2'>

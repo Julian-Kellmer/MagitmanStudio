@@ -26,8 +26,10 @@ const Contacto = () => {
         </div>
 
         {/* Form Section */}
-        <div className='col-span-full flex justify-center px-4'>
-          <ContactForm />
+        <div className='layout-grid'>
+          <div className='col-span-full md:col-span-10 md:col-start-2 px-4 md:px-0'>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </main>

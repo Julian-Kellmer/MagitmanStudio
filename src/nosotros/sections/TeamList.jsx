@@ -24,7 +24,8 @@ const ArrowIcon = () => (
 // Associates data moved into TeamList component for i18n support
 
 const TeamMemberItem = ({ member, isOpen, toggleOpen }) => {
-  const hasServices = member.servicios && member.servicios.length > 0
+  const hasServices =
+    Array.isArray(member.servicios) && member.servicios.length > 0
 
   return (
     <div
@@ -229,7 +230,7 @@ const TeamList = () => {
         {/* Main Team List */}
         <div className='col-span-full layout-grid '>
           <div className='col-span-full mb-24'>
-            <h1 className='text-h2 text-primary font-medium leading-tight mb-8'>
+            <h1 className='text-h4 text-primary font-medium leading-tight mb-8'>
               {t('teamTitle')}
             </h1>
             <div className='grid md:grid-cols-2 gap-x-12 gap-y-6'>
