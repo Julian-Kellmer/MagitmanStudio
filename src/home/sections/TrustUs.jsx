@@ -150,6 +150,16 @@ const brands = [
     image: '/clientes/VistaSurFilms.png',
     url: 'https://vistasurfilms.com.ar/',
   },
+  {
+    name: 'Cotillon S.A',
+    image: '/clientes/CotillonSA.png',
+    url: '',
+  },
+  {
+    name: 'Cyber 42',
+    image: '/clientes/Cyber42.png',
+    url: '',
+  },
 ]
 
 const BrandsModal = ({ isOpen, onClose, allBrands, t }) => {
