@@ -1,7 +1,7 @@
 export default {
   hero: {
     waveText:
-      'Acompañamos a las empresas en el desarrollo de sus negocios, otorgándole conocimiento especializado y respaldo en la toma de decisiones.',
+      'Acompañamos a las empresas en el desarrollo de sus negocios, otorgándoles conocimiento especializado y respaldo en la toma de decisiones.',
     imageAlt: 'Architecture',
   },
 
