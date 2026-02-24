@@ -32,16 +32,16 @@ export default {
       'We work in a personalized way. We analyze, advise and seek real improvements and tax savings that accompany the growth of each business.',
     card1Title: 'Personalized attention',
     card1Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'We provide personalized attention to each client, focusing on their needs and the particularity of their business.',
     card2Title: 'Proven experience and track record',
     card2Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'We have professional experience of more than 30 years, working as advisors to companies in different areas. We are trainers of professionals, both in the work and academic fields.',
     card3Title: 'Compliance and peace of mind',
     card3Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'We are attentive to compliance with accounting and tax regulations, providing peace of mind to our clients who rely on the work of our Firm.',
     card4Title: 'Constant support',
     card4Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'We accompany companies in the different instances and stages of their development.',
   },
 
   team: {

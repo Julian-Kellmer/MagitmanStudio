@@ -10,7 +10,7 @@ export default {
     aboutDesc:
       'Desde hace más de 30 años brindamos asesoramiento tributario; societario y servicios de auditoría.',
     aboutDesc2:
-      'Actuamos con compromiso, responsabilidad y lealtad es por ello que nuestros clientes nos elijen.',
+      'Actuamos con compromiso, responsabilidad y lealtad; es por ello que nuestros clientes nos elijen.',
     inOurStudio: 'En nuestro Estudio',
     inOurStudioDesc:
       'La capacitación, actualización permanente y solvencia profesional son los pilares de nuestro trabajo.',
@@ -32,16 +32,16 @@ export default {
       'Trabajamos de manera personalizada. Analizamos, asesoramos y buscamos mejoras reales y ahorros impositivos que acompañen el crecimiento de cada negocio.',
     card1Title: 'Atencion personalizada',
     card1Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'Brindamos atención personalizada a cada cliente, enfocándonos en sus necesidades y la particularidad de su negocio.',
     card2Title: 'Experiencia y trayectoria comprobada',
     card2Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'Contamos con experiencia profesional de más de 30 años, desempeñándonos como asesores de empresas de distintos rubros. Somos formadores de profesionales, tanto en el ámbito laboral como académico',
     card3Title: 'Cumplimiento y tranquilidad',
     card3Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'Estamos atentos al cumplimiento de la normativa contable e impositiva, otorgando tranquilidad a nuestros clientes que se apoyan en el trabajo de nuestro Estudio.',
     card4Title: 'Acompañamiento constante',
     card4Desc:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.',
+      'Acompañamos a las empresas en las distintas instancias y etapas de su desarrollo.',
   },
 
   team: {
