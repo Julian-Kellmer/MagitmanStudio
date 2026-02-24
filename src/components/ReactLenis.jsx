@@ -39,7 +39,7 @@ export const ReactLenis = forwardRef(
         lenis.destroy()
         lenisInstanceRef.current = null
       }
-    }, [root, JSON.stringify(options)]) // JSON stringify to avoid deep dep check, simple workaround
+    }, [root, options])
 
     if (root) {
       return <>{children}</>

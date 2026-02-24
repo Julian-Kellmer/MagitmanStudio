@@ -10,15 +10,13 @@ import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
 import { ReactLenis } from './components/ReactLenis'
 
+const lenisOptions = { autoRaf: false }
+
 function App() {
   const lenisRef = useRef()
 
   useEffect(() => {
     function update(time) {
-      // time in lenis raf is strictly timestamp?
-      // gsap ticker gives time in seconds for delta or frame time?
-      // lenis.raf(time) expects time in ms usually.
-      // User had lenisRef.current?.lenis?.raf(time * 1000)
       lenisRef.current?.lenis?.raf(time * 1000)
     }
 
@@ -27,10 +25,10 @@ function App() {
     return () => gsap.ticker.remove(update)
   }, [])
   return (
-    <body className='relative'>
+    <div className='relative'>
       <ReactLenis
         root
-        options={{ autoRaf: false }}
+        options={lenisOptions}
         ref={lenisRef}
       />
       <Router>
@@ -56,7 +54,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </body>
+    </div>
   )
 }
 

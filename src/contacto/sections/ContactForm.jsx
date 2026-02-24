@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { useTranslation } from '../../i18n/context.jsx'
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -9,13 +8,12 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const initialForm = {
   name: '',
   email: '',
-  phone: '',
-  subject: '',
+  phoneNumber: '',
+  title: '',
   message: '',
 }
 
 const ContactForm = () => {
-  const { t } = useTranslation('contact')
   const [formData, setFormData] = useState(initialForm)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState({ type: 'idle', message: '' }) // idle | sending | success | error
@@ -31,17 +29,16 @@ const ContactForm = () => {
 
   const validate = () => {
     const newErrors = {}
-    if (!formData.name.trim()) newErrors.name = t('validation.nameRequired')
+    if (!formData.name.trim()) newErrors.name = 'El nombre es obligatorio'
     if (!formData.email.trim()) {
-      newErrors.email = t('validation.emailRequired')
+      newErrors.email = 'El email es obligatorio'
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = t('validation.emailInvalid')
+      newErrors.email = 'Ingresá un email válido'
     }
-    if (!formData.phone.trim()) newErrors.phone = t('validation.phoneRequired')
-    if (!formData.subject.trim())
-      newErrors.subject = t('validation.subjectRequired')
+    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = 'El teléfono es obligatorio'
+    if (!formData.title.trim()) newErrors.title = 'El asunto es obligatorio'
     if (!formData.message.trim())
-      newErrors.message = t('validation.messageRequired')
+      newErrors.message = 'El mensaje es obligatorio'
     return newErrors
   }
 
@@ -62,19 +59,25 @@ const ContactForm = () => {
         {
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
+          phoneNumber: formData.phoneNumber,
+          title: formData.title,
           message: formData.message,
         },
         PUBLIC_KEY,
       )
-      setStatus({ type: 'success', message: t('status.success') })
+      setStatus({
+        type: 'success',
+        message: '¡Mensaje enviado! Te responderemos a la brevedad.',
+      })
       setFormData(initialForm)
       // Reset success message after 5s
       setTimeout(() => setStatus({ type: 'idle', message: '' }), 5000)
     } catch (err) {
       console.error('EmailJS error:', err)
-      setStatus({ type: 'error', message: t('status.error') })
+      setStatus({
+        type: 'error',
+        message: 'Hubo un error al enviar. Intentá de nuevo.',
+      })
       setTimeout(() => setStatus({ type: 'idle', message: '' }), 5000)
     }
   }
@@ -92,15 +95,16 @@ const ContactForm = () => {
         <label
           htmlFor='contact-name'
           className='text-xs uppercase tracking-widest text-primary/50 font-medium'>
-          {t('form.nameLabel')}
+          Nombre completo
         </label>
         <input
           id='contact-name'
           type='text'
           name='name'
+          autoComplete='name'
           value={formData.name}
           onChange={handleChange}
-          placeholder={t('form.namePlaceholder')}
+          placeholder='Tu nombre'
           className={inputBaseClass}
         />
         {errors.name && (
@@ -113,15 +117,16 @@ const ContactForm = () => {
         <label
           htmlFor='contact-email'
           className='text-xs uppercase tracking-widest text-primary/50 font-medium'>
-          {t('form.emailLabel')}
+          Email
         </label>
         <input
           id='contact-email'
           type='email'
           name='email'
+          autoComplete='email'
           value={formData.email}
           onChange={handleChange}
-          placeholder={t('form.emailPlaceholder')}
+          placeholder='tu@email.com'
           className={inputBaseClass}
         />
         {errors.email && (
@@ -132,42 +137,43 @@ const ContactForm = () => {
       {/* Phone — half row on desktop */}
       <div className='flex flex-col gap-1'>
         <label
-          htmlFor='contact-phone'
+          htmlFor='contact-phoneNumber'
           className='text-xs uppercase tracking-widest text-primary/50 font-medium'>
-          {t('form.phoneLabel')}
+          Teléfono
         </label>
         <input
-          id='contact-phone'
+          id='contact-phoneNumber'
           type='tel'
-          name='phone'
-          value={formData.phone}
+          name='phoneNumber'
+          autoComplete='tel'
+          value={formData.phoneNumber}
           onChange={handleChange}
-          placeholder={t('form.phonePlaceholder')}
+          placeholder='+54 11 1234-5678'
           className={inputBaseClass}
         />
-        {errors.phone && (
-          <span className='text-secondary text-xs mt-1'>{errors.phone}</span>
+        {errors.phoneNumber && (
+          <span className='text-secondary text-xs mt-1'>{errors.phoneNumber}</span>
         )}
       </div>
 
-      {/* Title / Subject — full row */}
+      {/* Title / title — full row */}
       <div className='flex flex-col gap-1 md:col-span-2'>
         <label
-          htmlFor='contact-subject'
+          htmlFor='contact-title'
           className='text-xs uppercase tracking-widest text-primary/50 font-medium'>
-          {t('form.subjectLabel')}
+          Asunto
         </label>
         <input
-          id='contact-subject'
+          id='contact-title'
           type='text'
-          name='subject'
-          value={formData.subject}
+          name='title'
+          value={formData.title}
           onChange={handleChange}
-          placeholder={t('form.subjectPlaceholder')}
+          placeholder='¿En qué podemos ayudarte?'
           className={inputBaseClass}
         />
-        {errors.subject && (
-          <span className='text-secondary text-xs mt-1'>{errors.subject}</span>
+        {errors.title && (
+          <span className='text-secondary text-xs mt-1'>{errors.title}</span>
         )}
       </div>
 
@@ -176,14 +182,14 @@ const ContactForm = () => {
         <label
           htmlFor='contact-message'
           className='text-xs uppercase tracking-widest text-primary/50 font-medium'>
-          {t('form.messageLabel')}
+          Mensaje
         </label>
         <textarea
           id='contact-message'
           name='message'
           value={formData.message}
           onChange={handleChange}
-          placeholder={t('form.messagePlaceholder')}
+          placeholder='Escribí tu mensaje...'
           rows={3}
           className={`${inputBaseClass} resize-none`}
         />
@@ -202,7 +208,7 @@ const ContactForm = () => {
             className={`inline-flex items-center gap-2 transition-opacity duration-300 ${
               status.type === 'sending' ? 'opacity-0' : 'opacity-100'
             }`}>
-            {t('form.submit')}
+            Enviar mensaje
           </span>
           {status.type === 'sending' && (
             <span className='absolute inset-0 flex items-center justify-center'>
